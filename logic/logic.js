@@ -63,12 +63,21 @@ class methods
 
             for(let i=0; i<data.length;i++)
             {
-                configjsn.push({id:data[i].id,cpu:data[i].cpu,ram:data[i].ram,overloaded:data[i].overloaded,mail:data[i].mail});
+                configjsn.push({id:data[i].id,server:data[i].server,cpu:data[i].cpu,ram:data[i].ram,overloaded:data[i].overloaded,mail:data[i].mail});
             }
             res.header("Access-Control-Allow-Origin", "*");
             res.send(configjsn);
             console.log("sent settings");
         }
+    }
+
+    async postServers(res,req)
+    {
+        await this.mongoer.insertServers(req.body);
+        res.header("Access-Control-Allow-Origin", "*");
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({status:true}));
+        res.end();
     }
 }
 

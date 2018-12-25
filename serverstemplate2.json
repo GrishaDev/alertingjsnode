@@ -1,0 +1,5 @@
+[
+  {"id":0,"server": "example1", "cpu": "322%","ram":"3252%","overloaded":"true"},
+  {"id":1,"server": "mastik", "cpu": "53242%","ram":"93242%","overloaded":"true"},
+  {"id":2,"server": "harta2", "cpu": "0%","ram":"0%","overloaded":"false"},
+  {"id":3,"server": "harta4", "cpu": "0%","ram":"0%","overloaded":"false"}]

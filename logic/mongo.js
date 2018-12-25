@@ -1,6 +1,8 @@
 let mongoose = require('mongoose');
 let settingschema = require('../schemas/settingschema.js');
 let serverschema = require('../schemas/serverschema.js');
+let mailschema = require('../schemas/mailschema.js');
+
 //let config2 = require('../config2.json');
 
 class mongo
@@ -8,7 +10,7 @@ class mongo
     constructor(path)
     {
         mongoose.connect(path);
-    }
+    }   
     async test()
     {
         console.log("mongo test");
@@ -31,7 +33,6 @@ class mongo
             console.log("dberror:: "+err);
         }
     }
-
     async getSettings()
     {
         try
@@ -74,6 +75,38 @@ class mongo
                 insertmongo.save();
             }
             console.log("servers inserted to mongo");
+        }
+        catch(err)
+        {
+            console.log("dberror:: "+err);
+        }
+    }
+    async getMails()
+    {
+        try
+        {
+            let data = await mailschema.find({});
+            console.log("got mails from mongo");
+            return data;
+        }
+        catch(err)
+        {
+            console.log("dberror:: "+err);
+            return "error";
+        }
+    }
+    async insertMails(data)
+    {
+        try
+        {
+            await mailschema.remove({});
+
+            for(let i=0;i<data.length;i++)
+            {
+                let insertmongo = await new mailschema(data[i]);
+                insertmongo.save();
+            }
+            console.log("mails inserted to mongo");
         }
         catch(err)
         {

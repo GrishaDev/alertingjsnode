@@ -1,6 +1,6 @@
 [
-  {"id":0,"server": "example1", "cpu": "92%","ram":"52%","overloaded":"true","mail":"dada@gmail.com,pringles@hey.com"},
-  {"id":1,"server": "harta5", "cpu": "52%","ram":"92%","overloaded":"true","mail":"pringles@hey.com"},
-  {"id":2,"server": "harta2", "cpu": "12%","ram":"3%","overloaded":"false","mail":"dada@gmail.com"},
-  {"id":3,"server": "harta4", "cpu": "2%","ram":"3%","overloaded":"false","mail":"pringlesaa@hey.com"},
-  {"id":4,"server": "harta7", "cpu": "5%","ram":"2%","overloaded":"false","mail":"dada@gmail.com324,pringl324es@hey.com"}]
+  {"id":0,"server": "example1", "cpu": "92%","ram":"52%","overloaded":"true"},
+  {"id":1,"server": "harta5", "cpu": "52%","ram":"92%","overloaded":"true"},
+  {"id":2,"server": "harta2", "cpu": "12%","ram":"3%","overloaded":"false"},
+  {"id":3,"server": "harta4", "cpu": "2%","ram":"3%","overloaded":"false"},
+  {"id":4,"server": "harta7", "cpu": "5%","ram":"2%","overloaded":"false"}]

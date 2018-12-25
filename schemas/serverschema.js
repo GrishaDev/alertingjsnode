@@ -7,8 +7,7 @@ var servers = new Schema({
     server:   String,
     cpu:  String,
     ram: String,
-    overloaded: String,
-    mail: String
+    overloaded: String
 });
 
 var thing = mongoose.model('servers', servers);

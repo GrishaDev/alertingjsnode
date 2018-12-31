@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+let session = require('express-session');
+let secret = require('./secret.json')
 
 var indexRouter = require('./routes/index');
 
@@ -34,7 +36,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use(session(
+{
+    secret: secret.sessionsecret,
+    resave: true,
+    saveUninitialized: true
+}));
+
 app.use('/api', indexRouter);
+
+//console.log("the secret is...... .. "+secret.sessionsecret);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

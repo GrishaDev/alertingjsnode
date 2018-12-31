@@ -4,6 +4,8 @@ let serverstemplate = require('../serverstemplate.json')
 let serverstemplate2 = require('../serverstemplate2.json')
 let mailstemplate = require('../mailstemplate.json')
 let secret = require('../secret.json')
+let session = require('express-session');
+
 class methods
 {
     constructor()
@@ -101,6 +103,7 @@ class methods
 
     async postMails(res,req)
     {
+        console.log(req.body);
         await this.mongoer.insertMails(req.body);
         res.header("Access-Control-Allow-Origin", "*");
         res.writeHead(200, {"Content-Type": "application/json"});
@@ -111,6 +114,28 @@ class methods
     async change()
     {
         await this.mongoer.insertServers(serverstemplate2);
+    }
+
+    async login(res,req)
+    {
+        var user = req.body.user;
+        var pass = req.body.pass;
+
+        if(user == secret.user && pass == secret.pass)
+        {
+            console.log("Authorized!");
+            req.session.auth = true;
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.write(JSON.stringify({auth:true})); 
+            res.end();
+        }
+        else
+        {
+            console.log("Not Authorized!");
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.write(JSON.stringify({auth:false})); 
+            res.end();
+        }
     }
 }
 

@@ -56,4 +56,9 @@ router.post('/postmails',(req,res) =>
     methods.postMails(res,req);
 });
 
+router.post('/loginsubmit',(req,res) =>
+{
+    methods.login(res,req);
+});
+
 module.exports = router;

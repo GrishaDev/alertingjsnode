@@ -99,13 +99,26 @@ class mongo
     {
         try
         {
-            await mailschema.remove({});
+           // await mailschema.remove({});
+            let obj = await mailschema.find({server: data.server});
 
-            for(let i=0;i<data.length;i++)
+            if(obj && obj.length)
             {
-                let insertmongo = await new mailschema(data[i]);
+                await mailschema.findOneAndUpdate({server: data.server}, 
+                    {$set:data}, 
+                    {new: true});
+            }
+            else
+            {
+                let insertmongo = await new mailschema(data);
                 insertmongo.save();
             }
+
+            // for(let i=0;i<data.length;i++)
+            // {
+            //     let insertmongo = await new mailschema(data[i]);
+            //     insertmongo.save();
+            // }
             console.log("mails inserted to mongo");
         }
         catch(err)
@@ -113,6 +126,8 @@ class mongo
             console.log("dberror:: "+err);
         }
     }
+
+    
 }
 
 module.exports = mongo;

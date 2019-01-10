@@ -4,8 +4,14 @@ const config = require('../config.json');
 let config2 = require('../config2.json');
 let fs = require('fs');
 let logic = require('../logic/logic.js');
+let path = require('path');
 
 let methods = new logic();
+
+router.get('/',(req,res) =>
+{
+    res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+});
 
 router.get('/initsettings',(req,res) =>
 {

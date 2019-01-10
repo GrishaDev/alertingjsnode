@@ -16,8 +16,9 @@ var app = express();
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'alertingjsng_v1')); //views
+app.set('view engine','ejs');//jade
+app.use('/', express.static('alertingjsng_v1')); 
 
 
 app.use(function(req, res, next) {

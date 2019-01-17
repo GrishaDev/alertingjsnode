@@ -1,4 +1,5 @@
 let mongo = require('../logic/mongo.js');
+let service = require('../logic/service.js');
 let config2 = require('../config2.json');
 let serverstemplate = require('../serverstemplate.json')
 let serverstemplate2 = require('../serverstemplate2.json')
@@ -11,6 +12,7 @@ class methods
     constructor()
     {
         this.mongoer = new mongo(secret.mongopath);
+        this.servicer = new service(this.mongoer);
     }
     async initSettings() 
     {

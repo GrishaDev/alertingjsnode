@@ -10,7 +10,7 @@ class mongo
     constructor(path)
     {
         mongoose.connect(path);
-    }   
+    }
     async test()
     {
         console.log("mongo test");

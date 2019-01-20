@@ -125,6 +125,8 @@ class methods
 
         if(user == secret.user && pass == secret.pass)
         {
+            req.session.auth = true;
+            console.log(req.session.auth);
             console.log("Authorized!");
             req.session.auth = true;
             res.writeHead(200, {"Content-Type": "application/json"});

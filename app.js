@@ -17,7 +17,7 @@ var app = express();
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'alertingjsng_v1')); //views
-app.set('view engine','ejs');//jade
+// app.set('view engine','ejs');//jade
 app.use('/', express.static('alertingjsng_v1')); 
 
 
@@ -26,6 +26,12 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+app.use(function(err, req, res, next) {
+  // render the error page 
+  res.status(err.status || 500)
+  res.send({ 'error': 'no route found!' });
+ });
 
 app.use(cors());
 
@@ -44,7 +50,7 @@ app.use(session(
     saveUninitialized: true
 }));
 
-app.use('/api', indexRouter);
+app.use('/', indexRouter);
 
 //console.log("the secret is...... .. "+secret.sessionsecret);
 

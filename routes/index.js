@@ -12,6 +12,7 @@ const prefix ='/api'
 
 router.get(prefix+'/',(req,res) =>
 {
+    req.session.auth = false;
     res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
 });
 
@@ -24,10 +25,6 @@ router.get('/main',(req,res) =>
         console.log("am i here?");
         console.log(req.session.auth);
         res.redirect('/');
-    }
-    else
-    {     
-        res.redirect('/main');
     }
 });
 
@@ -83,6 +80,10 @@ router.post(prefix+'/postmails',(req,res) =>
 router.post(prefix+'/loginsubmit',(req,res) =>
 {
     methods.login(res,req);
+});
+
+router.get('*', function(req, res){
+    res.send('Page not found', 404);
 });
 
 module.exports = router;

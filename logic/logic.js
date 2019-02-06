@@ -141,6 +141,22 @@ class methods
             res.end();
         }
     }
+
+    async getCount(res,req)
+    {
+        let x = this.servicer.getCount()
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({minutes:x})); 
+        res.end();
+    }
+
+    async getMails(res,req)
+    {
+        let x = this.servicer.getMails()
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({mails:x})); 
+        res.end();
+    }
 }
 
 module.exports = methods;

@@ -10,16 +10,24 @@ let methods = new logic();
 
 const prefix ='/api'
 
-router.get(prefix+'/',(req,res) =>
+router.get('/',(req,res) =>
 {
-    req.session.auth = false;
-    res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+    // console.log("Your auth status is "+req.session.auth);
+    // req.session.auth = false;
+    console.log("Your auth status is "+req.session.auth);
+    if(req.session.auth)
+    {
+        res.redirect('/main');
+    }
+    // res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
 });
 
 router.get('/main',(req,res) =>
 {
     console.log("vat?");
     console.log("Your auth status is "+req.session.auth);
+    res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+
     if(!req.session.auth)
     {
         console.log("am i here?");
@@ -81,6 +89,23 @@ router.post(prefix+'/loginsubmit',(req,res) =>
 {
     methods.login(res,req);
 });
+
+router.get(prefix+'/logout',(req,res) =>
+{
+    console.log("logged out");
+    req.session.auth = false;
+});
+
+router.get(prefix+'/count',(req,res) =>
+{
+    methods.getCount(res,req);
+});
+
+router.get(prefix+'/mails',(req,res) =>
+{
+    methods.getMails(res,req);
+});
+
 
 router.get('*', function(req, res){
     res.send('Page not found', 404);

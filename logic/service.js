@@ -9,6 +9,9 @@ class service
         console.log("Alerting service started");
         this.mongoer = mongoer;
         setInterval(this.work.bind(this),60000); //minute
+        this.minutes=0;
+        this.mailsent=0;
+        setInterval(this.count.bind(this),60000);
     }
 
     // ------- here goes code of the service ------------
@@ -20,7 +23,6 @@ class service
 
         // comment this for less stress:
         // this.randomData();
-
     }
 
     async randomData()
@@ -62,7 +64,10 @@ class service
                     mail=mails[j].mail;
             }
             if(data[i].overloaded)
+            {
                 console.log("Sending mail/s to "+mail+" because "+data[i].server+"is overloaded");
+                this.mailsent += 1;
+            }
         }
     }
 
@@ -82,6 +87,21 @@ class service
           }
         }
         return peak;
+    }
+
+    async count()
+    {
+        this.minutes +=1;
+    }
+
+    getCount()
+    {
+        return this.minutes;
+    }
+
+    getMails()
+    {
+        return this.mailsent;
     }
 }
 

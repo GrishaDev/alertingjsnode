@@ -19,8 +19,18 @@ var app = express();
 // app.set('views', path.join(__dirname, 'alertingjsng_v1')); //views
 // app.set('view engine','ejs');//jade
 // app.set('view engine', 'html');
-app.use('/', express.static('alertingjsng_v1')); 
 
+app.use(express.static('alertingjsng_v1')); 
+
+// app.use('/main', express.static('alertingjsng_v1')); 
+
+// app.use('/',function(req,res,next){
+//   if(req.session.auth)
+//   {
+//       res.redirect('/main');
+//   }
+//   next();
+// });
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -52,7 +62,12 @@ app.use(session(
     saveUninitialized: true
 }));
 
-app.use('/', indexRouter);
+app.use('/',indexRouter);
+
+// app.get('*', (req, res) => {
+
+//   res.sendFile(path.join(__dirname, 'alertingjsng_v1/index.html'));
+// });
 
 //console.log("the secret is...... .. "+secret.sessionsecret);
 

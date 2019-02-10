@@ -237,7 +237,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.subtitle\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 1em;\r\n    text-align: center;\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center;\r\n}"
+module.exports = ".title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.subtitle\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 1em;\r\n    text-align: center;\r\n    /* text-overflow: ellipsis; */\r\n    /* max-width: 20%; */\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center;\r\n}"
 
 /***/ }),
 
@@ -248,7 +248,7 @@ module.exports = ".title\r\n{\r\n    position: relative;\r\n    /* color: darkgr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"title\"> Welcome </p>\n\n<p class=\"subtitle\"> The service is running for {{hours}} hours.</p>\n<p class=\"subtitle\"> {{mails}} mails were sent.</p>\n<p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n"
+module.exports = "<p class=\"title\"> Welcome </p>\n\n<p class=\"subtitle\">Alerting service will show you all the needed servers and their metrics, configure who will recieve mails on critical metrics and configure many other variables of the service.</p>\n<p class=\"subtitle\">This is early buggy alpha, its probably usable but expect alot of bugs.</p>\n<!-- <mat-divider></mat-divider> -->\n<br>\n<p class=\"subtitle\"> The service is running for {{hours}} hours and {{minutes}} minutes.</p>\n<p class=\"subtitle\"> {{mails}} mails were sent.</p>\n<p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n"
 
 /***/ }),
 
@@ -280,14 +280,19 @@ var HomeComponent = /** @class */ (function () {
         this.homeapi = homeapi;
         this.mails = 0;
         this.hours = 0;
+        this.minutes = 0;
         this.errormsg = "";
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.homeapi.getCount().subscribe(function (data) {
             console.log(data);
-            var x = (data.minutes) / 60;
-            _this.hours = Number(x.toFixed(2));
+            // var x:number = (data.minutes)/60
+            // this.hours = Number(x.toFixed(2));
+            var datka = data.minutes;
+            _this.hours = Math.floor(datka / 60);
+            datka = datka - (_this.hours * 60);
+            _this.minutes = datka;
         }, function (err) {
             console.log("Error contacting home service, server down? details: " + JSON.stringify(err));
             _this.errormsg = "Error getting data from database, try again soon.";
@@ -646,8 +651,10 @@ var MainComponent = /** @class */ (function () {
         }
     };
     MainComponent.prototype.logout = function () {
-        this.http.get(this.host + '/logout');
-        this.router.navigate([""]);
+        var _this = this;
+        this.http.get(this.host + '/api/logout').subscribe(function (data) {
+            _this.router.navigate([""]);
+        });
     };
     MainComponent.prototype.help = function () {
         alert("no help in early alpha");

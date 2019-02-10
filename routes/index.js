@@ -15,11 +15,12 @@ router.get('/',(req,res) =>
     // console.log("Your auth status is "+req.session.auth);
     // req.session.auth = false;
     console.log("Your auth status is "+req.session.auth);
+    // res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
     if(req.session.auth)
     {
         res.redirect('/main');
     }
-    // res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+   
 });
 
 router.get('/main',(req,res) =>
@@ -94,6 +95,8 @@ router.get(prefix+'/logout',(req,res) =>
 {
     console.log("logged out");
     req.session.auth = false;
+    console.log("?!?!? "+req.session.auth);
+    res.redirect('/');
 });
 
 router.get(prefix+'/count',(req,res) =>

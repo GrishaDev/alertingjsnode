@@ -35,7 +35,7 @@ class methods
         if(data === "error")
         {
             res.header("Access-Control-Allow-Origin", "*");
-            res.send({id:-1,name:"error",value:"its mongodb error, try again later"});
+            res.send(200,{id:-1,name:"error",value:"its mongodb error, try again later"});
         }
         else
         {
@@ -46,17 +46,27 @@ class methods
                 configjsn.push({id:data[i].id,name:data[i].name,value:data[i].value});
             }
             res.header("Access-Control-Allow-Origin", "*");
-            res.send(configjsn);
+            res.send(200,configjsn);
             console.log("sent settings");
         }
     }
     async postSettings(res,req)
     {
-        await this.mongoer.insertSettings(req.body);
-        res.header("Access-Control-Allow-Origin", "*");
-        res.writeHead(200, {"Content-Type": "application/json"});
-        res.write(JSON.stringify({status:true}));
-        res.end();
+        if(!req.session.admin)
+        {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.write(JSON.stringify({status:true,hack:true}));
+            res.end();
+        }
+        else
+        {
+            await this.mongoer.insertSettings(req.body);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.write(JSON.stringify({status:true}));
+            res.end();
+        }
     }
 
     async getServers(res)
@@ -68,7 +78,7 @@ class methods
         if(data === "error")
         {
             res.header("Access-Control-Allow-Origin", "*");
-            res.send({id:-1,server:"error",cpu:"error",ram:"error",overloaded:"true",mail:"its mongodb error, try again later"});
+            res.send(200,{id:-1,server:"error",cpu:"error",ram:"error",overloaded:"true",mail:"its mongodb error, try again later"});
         }
         else
         {
@@ -89,7 +99,7 @@ class methods
                // configjsn.push({id:data[i].id,server:data[i].server,cpu:data[i].cpu,ram:data[i].ram,overloaded:data[i].overloaded,mail:data[i].mail});
             }
             res.header("Access-Control-Allow-Origin", "*");
-            res.send(configjsn);
+            res.send(200,configjsn);
             console.log("sent settings");
         }
     }
@@ -129,6 +139,16 @@ class methods
             console.log(req.session.auth);
             console.log("Authorized!");
             req.session.auth = true;
+            req.session.admin = false;
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.write(JSON.stringify({auth:true})); 
+            res.end();
+        }
+        else if(user == secret.admin && pass == secret.adminpass)
+        {
+            console.log("Authorized admin!");
+            req.session.auth = true;
+            req.session.admin = true;
             res.writeHead(200, {"Content-Type": "application/json"});
             res.write(JSON.stringify({auth:true})); 
             res.end();

@@ -20,7 +20,7 @@ var app = express();
 // app.set('view engine','ejs');//jade
 // app.set('view engine', 'html');
 
-app.use(express.static('alertingjsng_v1')); 
+app.use('/',express.static('alertingjsng_v1')); 
 
 // app.use('/main', express.static('alertingjsng_v1')); 
 

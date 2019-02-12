@@ -237,7 +237,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.subtitle\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 1em;\r\n    text-align: center;\r\n    /* text-overflow: ellipsis; */\r\n    /* max-width: 20%; */\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center;\r\n}"
+module.exports = ".all\r\n{\r\n    /* position: absolute; */\r\n    overflow-y: hidden;\r\n    height: auto;\r\n}\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n.subtitle\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 1em;\r\n    text-align: center;\r\n    /* text-overflow: ellipsis; */\r\n    /* max-width: 20%; */\r\n}\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n.middle\r\n{\r\n    text-align: center;\r\n}"
 
 /***/ }),
 
@@ -248,7 +248,7 @@ module.exports = ".title\r\n{\r\n    position: relative;\r\n    /* color: darkgr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"title\"> Welcome </p>\n\n<p class=\"subtitle\">Alerting service will show you all the needed servers and their metrics, configure who will recieve mails on critical metrics and configure many other variables of the service.</p>\n<p class=\"subtitle\">This is early buggy alpha, its probably usable but expect alot of bugs.</p>\n<!-- <mat-divider></mat-divider> -->\n<br>\n<p class=\"subtitle\"> The service is running for {{hours}} hours and {{minutes}} minutes.</p>\n<p class=\"subtitle\"> {{mails}} mails were sent.</p>\n<p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n"
+module.exports = "<div class=\"all\">\n\n    <p class=\"title\"> Welcome </p>\n\n    <p class=\"subtitle\">Alerting service will show you all the needed servers and their metrics, configure who will recieve mails on critical metrics and configure many other variables of the service.</p>\n    <p class=\"subtitle\">This is early buggy alpha, its probably usable but expect alot of bugs.</p>\n    <!-- <mat-divider></mat-divider> -->\n    <br>\n    <p class=\"subtitle\"> The service is running for {{hours}} hours and {{minutes}} minutes.</p>\n    <p class=\"subtitle\"> {{mails}} mails were sent.</p>\n    <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n</div>\n"
 
 /***/ }),
 
@@ -454,7 +454,7 @@ var LoginComponent = /** @class */ (function () {
             }
         }, function (err) {
             console.log("Error occured+ :: " + err);
-            alert("Error connecting.");
+            it.err = "Error connecting";
         });
     };
     LoginComponent.prototype.inputChanged = function ($event) {
@@ -541,7 +541,7 @@ var LoginService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{\r\n    box-sizing: border-box;\r\n    display: block;\r\n    height: 100%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 3em;\r\n    text-align: center;\r\n}\r\n\r\n.all\r\n{\r\n    position: absolute;\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n}\r\n\r\n/* .maxheight\r\n{\r\n    height: 800px !important;\r\n} */\r\n\r\n#wrapper{\r\n    min-height: 100%; \r\n    height: 100%; \r\n    box-sizing: border-box;/*new*/\r\n  }\r\n\r\n/* .tab\r\n{\r\n    background-color: red;\r\n} */\r\n\r\n#tab-group{\r\n    height:90%;\r\n  }\r\n\r\n#tab-group mat-tab-body {\r\n    flex-grow: 1;\r\n  }\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n/* .example-card{\r\n      margin-top: 4px;\r\n  } */\r\n\r\n.example-header-image { \r\n    background-size: cover;\r\n  }\r\n\r\n.title{\r\n      font-weight: bold;\r\n  }\r\n\r\n.img-article{\r\n      position: relative;\r\n      height: 350px;\r\n      width: 50%;\r\n      left: 25%;\r\n  }\r\n\r\n.action-buttons{\r\n      text-align: center;\r\n  }\r\n\r\n.example-container {\r\n      /* position: relative; */\r\n      width: 100%;\r\n      height: 100%;\r\n      /* border: 1px solid rgba(111, 111, 111, 0.50); */\r\n  }\r\n\r\n.example-sidenav-content {\r\n      display: flex;\r\n      height: 75%;\r\n      align-items: center;\r\n      justify-content: center;\r\n  }\r\n\r\n.example-sidenav {\r\n      padding: 20px;\r\n  }\r\n\r\n.source-name {\r\n      margin-left:15%; \r\n      font-size: 2em;\r\n  }\r\n\r\n.list-item\r\n  {\r\n      margin-bottom: 4%;\r\n  }\r\n\r\n.list-item:hover{\r\n      cursor: pointer;\r\n      background-color: #3f51b5;\r\n      color: white;\r\n  }\r\n\r\n.avatar\r\n  {\r\n      width: 30%;\r\n      height: 30%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      padding-bottom: 10%;\r\n  }\r\n\r\n.logo\r\n  {\r\n    height: 50%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    padding-right: 20px;\r\n  }"
+module.exports = ":host{\r\n    box-sizing: border-box;\r\n    display: block;\r\n    height: 100%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 3em;\r\n    text-align: center;\r\n}\r\n\r\n.all\r\n{\r\n    position: absolute;\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n}\r\n\r\n/* .maxheight\r\n{\r\n    height: 800px !important;\r\n} */\r\n\r\n#wrapper{\r\n    min-height: 100%; \r\n    height: 100%; \r\n    box-sizing: border-box;/*new*/\r\n  }\r\n\r\n/* .tab\r\n{\r\n    overflow: hidden;\r\n} */\r\n\r\n#tab-group{\r\n    height:90%;\r\n    /* overflow: hidden; */\r\n  }\r\n\r\n#tab-group mat-tab-body {\r\n    flex-grow: 1;\r\n  }\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n/* .example-card{\r\n      margin-top: 4px;\r\n  } */\r\n\r\n.example-header-image { \r\n    background-size: cover;\r\n  }\r\n\r\n.title{\r\n      font-weight: bold;\r\n  }\r\n\r\n.img-article{\r\n      position: relative;\r\n      height: 350px;\r\n      width: 50%;\r\n      left: 25%;\r\n  }\r\n\r\n.action-buttons{\r\n      text-align: center;\r\n  }\r\n\r\n.example-container {\r\n      /* position: relative; */\r\n      width: 100%;\r\n      height: 100%;\r\n      /* border: 1px solid rgba(111, 111, 111, 0.50); */\r\n  }\r\n\r\n.example-sidenav-content {\r\n      display: flex;\r\n      height: 75%;\r\n      align-items: center;\r\n      justify-content: center;\r\n  }\r\n\r\n.example-sidenav {\r\n      padding: 20px;\r\n  }\r\n\r\n.source-name {\r\n      margin-left:15%; \r\n      font-size: 2em;\r\n  }\r\n\r\n.list-item\r\n  {\r\n      margin-bottom: 4%;\r\n  }\r\n\r\n.list-item:hover{\r\n      cursor: pointer;\r\n      background-color: #3f51b5;\r\n      color: white;\r\n  }\r\n\r\n.avatar\r\n  {\r\n      width: 30%;\r\n      height: 30%;\r\n      display: block;\r\n      margin: 0 auto;\r\n      padding-bottom: 10%;\r\n  }\r\n\r\n.logo\r\n  {\r\n    height: 50%;\r\n    display: block;\r\n    margin: 0 auto;\r\n    padding-right: 20px;\r\n  }"
 
 /***/ }),
 
@@ -552,7 +552,7 @@ module.exports = ":host{\r\n    box-sizing: border-box;\r\n    display: block;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- class all on this div -->\n<div id=\"wrapper\">\n  <mat-menu #appMenu=\"matMenu\">\n      <button mat-menu-item (click)=\"toggleTheme()\"> Switch theme </button>\n      <button mat-menu-item (click)=\"help()\"> Help </button>\n      <!-- <button mat-menu-item (click)=\"changeStatus()\"> Change status </button> -->\n      <button mat-menu-item (click)=\"logout()\"> Logout </button>\n    </mat-menu>\n    \n    \n   <mat-sidenav-container class=\"example-container\" >\n      <mat-toolbar color=\"primary\">\n        <!-- <button mat-button (click)=\"sidenav.open()\" ><mat-icon>menu</mat-icon></button> -->\n        <img src=\"../../assets/images/alertpng.png\" class=\"logo\">\n        <span>Alerting Service</span>  \n        <span class=\"example-spacer\"></span>\n        <p> buggy alpha</p>\n        <button mat-button [matMenuTriggerFor]=\"appMenu\"><mat-icon>settings</mat-icon></button>\n      </mat-toolbar>\n\n      <mat-tab-group id=\"tab-group\">\n          <mat-tab label=\"Home\" class=\"tab\">\n            <app-home></app-home>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Servers\">\n            <app-servers></app-servers>\n          </mat-tab>\n          <!-- <mat-tab label=\"Testing area\">\n            <app-testingarea></app-testingarea>\n          </mat-tab> -->\n      </mat-tab-group>\n\n      <mat-sidenav #sidenav class=\"example-sidenav\">\n        <mat-list class=\"list-nav\">\n            <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n            <mat-divider style=\"padding-top: 10%\"></mat-divider>\n            <mat-list-item class=\"list-item\" *ngFor=\"let source of options\" (click)=\"navPress(source[0]);sidenav.close();\">\n              <mat-icon>{{source[1]}}</mat-icon>\n              <span class=\"source-name\"> {{source[0]}}</span>\n            </mat-list-item>\n        </mat-list>\n      </mat-sidenav>\n        <!-- <p class=\"title\" color=\"primary\"> service is {{ statustr }} </p> -->\n        <!-- <app-settings *ngIf=\"content==0\"></app-settings>\n        <app-servers *ngIf=\"content==1\"></app-servers>\n        <app-testingarea *ngIf=\"content==2\"></app-testingarea> -->\n    </mat-sidenav-container>\n</div>"
+module.exports = "<!-- class all on this div -->\n<div id=\"wrapper\">\n  <mat-menu #appMenu=\"matMenu\">\n      <button mat-menu-item (click)=\"toggleTheme()\"> Switch theme </button>\n      <button mat-menu-item (click)=\"help()\"> Help </button>\n      <!-- <button mat-menu-item (click)=\"changeStatus()\"> Change status </button> -->\n      <button mat-menu-item (click)=\"logout()\"> Logout </button>\n    </mat-menu>\n    \n    \n   <mat-sidenav-container class=\"example-container\" >\n      <mat-toolbar color=\"primary\">\n        <!-- <button mat-button (click)=\"sidenav.open()\" ><mat-icon>menu</mat-icon></button> -->\n        <img src=\"../../assets/images/alertpng.png\" class=\"logo\">\n        <span>Alerting Service</span>  \n        <span class=\"example-spacer\"></span>\n        <p> buggy alpha</p>\n        <button mat-button [matMenuTriggerFor]=\"appMenu\"><mat-icon>settings</mat-icon></button>\n      </mat-toolbar>\n\n      <mat-tab-group id=\"tab-group\">\n          <mat-tab label=\"Home\" class=\"tab\">\n            <app-home></app-home>\n          </mat-tab>\n          <mat-tab label=\"Settings\" [disabled]=\"disabled\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Servers\">\n            <app-servers></app-servers>\n          </mat-tab>\n          <!-- <mat-tab label=\"Testing area\">\n            <app-testingarea></app-testingarea>\n          </mat-tab> -->\n      </mat-tab-group>\n\n      <mat-sidenav #sidenav class=\"example-sidenav\">\n        <mat-list class=\"list-nav\">\n            <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n            <mat-divider style=\"padding-top: 10%\"></mat-divider>\n            <mat-list-item class=\"list-item\" *ngFor=\"let source of options\" (click)=\"navPress(source[0]);sidenav.close();\">\n              <mat-icon>{{source[1]}}</mat-icon>\n              <span class=\"source-name\"> {{source[0]}}</span>\n            </mat-list-item>\n        </mat-list>\n      </mat-sidenav>\n        <!-- <p class=\"title\" color=\"primary\"> service is {{ statustr }} </p> -->\n        <!-- <app-settings *ngIf=\"content==0\"></app-settings>\n        <app-servers *ngIf=\"content==1\"></app-servers>\n        <app-testingarea *ngIf=\"content==2\"></app-testingarea> -->\n    </mat-sidenav-container>\n</div>"
 
 /***/ }),
 
@@ -597,16 +597,22 @@ var MainComponent = /** @class */ (function () {
         this.status = true;
         this.content = 0;
         this.darktheme = false;
+        this.disabled = true;
         console.log('app component constructor called');
     }
     MainComponent.prototype.ngOnInit = function () {
         this.init();
     };
     MainComponent.prototype.init = function () {
+        var _this = this;
         this.options = [['Settings', 'settings'], ['Servers', 'important_devices'], ['Testing area', 'brush']];
         var savedtheme = localStorage.getItem("theme");
         if (savedtheme == dark)
             this.toggleTheme();
+        this.http.get(this.host + '/api/auth').subscribe(function (data) {
+            if (data.admin)
+                _this.disabled = false;
+        });
     };
     MainComponent.prototype.changeStatus = function () {
         if (this.status) {
@@ -653,7 +659,8 @@ var MainComponent = /** @class */ (function () {
     MainComponent.prototype.logout = function () {
         var _this = this;
         this.http.get(this.host + '/api/logout').subscribe(function (data) {
-            _this.router.navigate([""]);
+            if (data.logout)
+                _this.router.navigate([""]);
         });
     };
     MainComponent.prototype.help = function () {
@@ -758,7 +765,7 @@ var ServerdialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n  .centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n  .title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n  .middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n  .example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n  .pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n  .mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n  .refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n  .mailtd\r\n{\r\n    max-width: 15em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n  .mailtd:hover\r\n{\r\n    cursor: pointer;\r\n      background-color: #3f51b5;\r\n      color: white;\r\n}\r\n\r\n  .text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n  .text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n  /* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\n  tbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\n  thead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
+module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.mailtd:hover\r\n{\r\n    cursor: pointer;\r\n      background-color: #3f51b5;\r\n      color: white;\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
 
 /***/ }),
 
@@ -769,7 +776,7 @@ module.exports = "table {\r\n    /* position: absolute; */\r\n    width: 100%;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- [@slideInOut] -->\n<p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n<div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n  <table mat-table [dataSource]=\"dataSource\">\n      \n      <ng-container matColumnDef=\"server\">\n          <th mat-header-cell *matHeaderCellDef> Server </th>\n          <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n      </ng-container>\n        \n      <ng-container matColumnDef=\"cpu\">\n        <th mat-header-cell *matHeaderCellDef> Cpu </th>\n        <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"ram\">\n        <th mat-header-cell *matHeaderCellDef> Ram </th>\n        <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n      </ng-container>\n\n      <ng-container matColumnDef=\"overloaded\">\n        <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n          [class.text-correct]=\"!server.overloaded\">\n          <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n          <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n          {{server.overloaded}} </td>\n      </ng-container>\n      <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n      <ng-container matColumnDef=\"mail\">\n        <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n        <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,i)\" class=\"mailtd\"> {{server.mail}} </td>\n      </ng-container>\n\n      <thead>\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      </thead>\n      <tbody>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n      </tbody>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n    <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n      <!-- <mat-toolbar-row> -->\n       <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n          <span class=\"example-spacer\"></span>\n        <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n      <!-- </mat-toolbar-row> -->\n    <!-- </mat-toolbar> -->\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n</div>\n<p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n<mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n  <!-- <p *ngIf=\"newmails\">\n      You chose: <i>{{newmails}}</i>\n  </p> -->"
+module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,i)\" class=\"mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
 
 /***/ }),
 
@@ -844,10 +851,11 @@ var ServersComponent = /** @class */ (function () {
         this.animation = false;
     }
     ServersComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.animation = true;
-        // this.dataSource  = new MatTableDataSource<Server>(SERVER_DATA);
-        // setTimeout(() => this.dataSource.paginator = this.paginator);
-        // setTimeout(function(){this.dataSource.paginator = this.paginator;},1000);
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
+        setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+        setTimeout(function () { this.dataSource.paginator = this.paginator; }, 1000);
         this.updateTable();
         this.first = false;
     };
@@ -889,12 +897,15 @@ var ServersComponent = /** @class */ (function () {
         });
     };
     ServersComponent.prototype.updateServers = function (data) {
+        var _this = this;
         this.serversapi.postsmails(data).subscribe(function (res) {
             if (res.status) {
+                // this.updateTable();
                 console.log("succesful servers update!");
             }
             else {
                 console.log("failed servers update.");
+                _this.errormsg = "Error getting data from database, try again soon.";
             }
         });
     };
@@ -1006,7 +1017,7 @@ var ServersService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".middle\r\n{\r\n    text-align: center; \r\n    /* background-color: lightblue; */\r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n    /* background-color: red; */\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
+module.exports = ".middle\r\n{\r\n    text-align: center; \r\n    /* background-color: lightblue; */\r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n    /* background-color: red; */\r\n}\r\ntextarea\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* overflow-y: scroll; */\r\n}\r\n/* ::-webkit-scrollbar { \r\n    display: none; \r\n} */\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
 
 /***/ }),
 
@@ -1107,6 +1118,9 @@ var SettingsService = /** @class */ (function () {
     SettingsService.prototype.postsettings = function (data) {
         return this.http.post(host + '/api/postsettings', data);
     };
+    SettingsService.prototype.resetSettings = function () {
+        return this.http.get(host + '/api/initsettings');
+    };
     SettingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -1127,7 +1141,7 @@ var SettingsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".all\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n}\r\n\r\ntable {\r\n    /* position: relative; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.valuetd\r\n{\r\n    max-width: 15em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.valuetd:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}"
+module.exports = ".all\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n}\r\n\r\ntable {\r\n    /* position: relative; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.valuetd\r\n{\r\n    width: 80%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.valuetd:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}"
 
 /***/ }),
 
@@ -1138,7 +1152,7 @@ module.exports = ".all\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n    marg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<!-- [@slideInOut] -->\n<!-- <div class=\"all\"> -->\n  <p class=\"title\"  *ngIf=\"animation\"> Settings list: </p>\n  <div class=\"mat-elevation-z8 centered\"  *ngIf=\"animation\" >\n\n  <table mat-table [dataSource]=\"dataSource\">\n      <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Setting </th>\n          <td mat-cell *matCellDef=\"let setting\"> {{setting.name}} </td>\n      </ng-container>\n        \n      <ng-container matColumnDef=\"value\">\n        <th mat-header-cell *matHeaderCellDef> Value </th>\n        <td mat-cell *matCellDef=\"let setting; let i=index\" class=\"valuetd\" (click)=\"openDialog(setting.name,setting.value,i)\"> {{setting.value}} </td>\n      </ng-container>\n    \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index; let setting\"></tr>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[3, 5, 10]\" showFirstLastButtons></mat-paginator>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n<!-- </div> -->\n\n<mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>"
+module.exports = "\n\n<!-- [@slideInOut] -->\n<!-- <div class=\"all\"> -->\n  <p class=\"title\"  *ngIf=\"animation\"> Settings list: </p>\n  <div class=\"mat-elevation-z8 centered\"  *ngIf=\"animation\" >\n\n  <table mat-table [dataSource]=\"dataSource\">\n      <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Setting </th>\n          <td mat-cell *matCellDef=\"let setting\"> {{setting.name}} </td>\n      </ng-container>\n        \n      <ng-container matColumnDef=\"value\">\n        <th mat-header-cell *matHeaderCellDef> Value </th>\n        <td mat-cell *matCellDef=\"let setting; let i=index\" class=\"valuetd\" (click)=\"openDialog(setting.name,setting.value,i)\"> {{setting.value}} </td>\n      </ng-container>\n    \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index; let setting\"></tr>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[3, 5, 10]\" showFirstLastButtons></mat-paginator>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:50px;\" color=\"primary\"><mat-icon (click)=\"resetSettings()\" title=\"reset settings\" class=\"refreshbtn\">build</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n<!-- </div> -->\n\n<mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>"
 
 /***/ }),
 
@@ -1232,12 +1246,36 @@ var SettingsComponent = /** @class */ (function () {
         });
     };
     SettingsComponent.prototype.updateSettings = function (data) {
+        var _this = this;
         this.settingsapi.postsettings(data).subscribe(function (res) {
-            if (res.status) {
+            if (res.hack) {
+                console.log("nice cheater");
+                _this.errormsg = "Nice try, but it won't work";
+            }
+            else if (res.status) {
+                // this.updateTable();
                 console.log("succesful settings update!");
             }
             else {
                 console.log("failed settings update.");
+                _this.errormsg = "Error getting data from database, try again soon.";
+            }
+        });
+    };
+    SettingsComponent.prototype.resetSettings = function () {
+        var _this = this;
+        this.settingsapi.resetSettings().subscribe(function (res) {
+            if (res.hack) {
+                console.log("nice cheater");
+                _this.errormsg = "Nice try, but it won't work";
+            }
+            else if (res.status) {
+                _this.updateTable();
+                console.log("succesful settings reset!");
+            }
+            else {
+                console.log("failed settings reset.");
+                _this.errormsg = "Error getting data from database, try again soon.";
             }
         });
     };

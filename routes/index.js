@@ -10,16 +10,25 @@ let methods = new logic();
 
 const prefix ='/api'
 
+// router.get('/',(req,res) =>
+// {
+//     res.redirect('/login');
+// });
+
 router.get('/',(req,res) =>
 {
-    // console.log("Your auth status is "+req.session.auth);
+    // console.log("default route, login");
     // req.session.auth = false;
-    console.log("Your auth status is "+req.session.auth);
-    // res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+    // console.log("Your auth status is "+req.session.auth);
+
     if(req.session.auth)
     {
         res.redirect('/main');
     }
+    // else
+    // {
+    //     res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+    // }
    
 });
 
@@ -27,7 +36,7 @@ router.get('/main',(req,res) =>
 {
     console.log("vat?");
     console.log("Your auth status is "+req.session.auth);
-    res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+    // res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
 
     if(!req.session.auth)
     {
@@ -35,12 +44,29 @@ router.get('/main',(req,res) =>
         console.log(req.session.auth);
         res.redirect('/');
     }
+    else
+    {
+        res.sendFile(path.join(__dirname, '../alertingjsng_v1/index.html'));
+    }
 });
 
 router.get(prefix+'/initsettings',(req,res) =>
 {
     methods.initSettings();
-    res.send("init settings in mongo");
+    if(!req.session.admin)
+    {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({status:true,hack:true}));
+        res.end();
+    }
+    else
+    {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({status:true}));
+        res.end();
+    }
 });
 
 router.get(prefix+'/initservers',(req,res) =>
@@ -96,6 +122,10 @@ router.get(prefix+'/logout',(req,res) =>
     console.log("logged out");
     req.session.auth = false;
     console.log("?!?!? "+req.session.auth);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.write(JSON.stringify({logout:true}));
+    res.end();
     res.redirect('/');
 });
 
@@ -109,6 +139,13 @@ router.get(prefix+'/mails',(req,res) =>
     methods.getMails(res,req);
 });
 
+router.get(prefix+'/auth',(req,res) =>
+{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.write(JSON.stringify({auth:req.session.auth,admin:req.session.admin}));
+    res.end();
+});
 
 router.get('*', function(req, res){
     res.send('Page not found', 404);

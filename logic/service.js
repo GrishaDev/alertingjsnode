@@ -22,7 +22,7 @@ class service
         // this.mongoer.insertServers(serverstemplate);
 
         // comment this for less stress:
-        // this.randomData();
+        this.randomData();
     }
 
     async randomData()
@@ -81,7 +81,13 @@ class service
           if(data[i].name=="peak")
           {
             let str = data[i].value;
-            let cropped = str.slice(0,str.length-1)
+            let cropped='';
+
+            if(str[str.length-1] == "%")
+                cropped = str.slice(0,str.length-1)
+            else
+                cropped=str;
+
             peak = Number(cropped);
             console.log(peak);
           }

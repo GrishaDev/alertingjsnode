@@ -112,6 +112,11 @@ router.post(prefix+'/postmails',(req,res) =>
     methods.postMails(res,req);
 });
 
+router.post(prefix+'/postgroups',(req,res) =>
+{
+    methods.postGroups(res,req);
+});
+
 router.post(prefix+'/loginsubmit',(req,res) =>
 {
     methods.login(res,req);

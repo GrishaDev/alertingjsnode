@@ -145,6 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
 /* harmony import */ var _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./testingarea/testingarea.component */ "./src/app/testingarea/testingarea.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./groupdialog/groupdialog.component */ "./src/app/groupdialog/groupdialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -171,6 +172,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
     { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"] },
     { path: 'main', component: _main_main_component__WEBPACK_IMPORTED_MODULE_15__["MainComponent"] },
@@ -189,7 +191,8 @@ var AppModule = /** @class */ (function () {
                 _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
                 _main_main_component__WEBPACK_IMPORTED_MODULE_15__["MainComponent"],
                 _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_17__["TestingareaComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_18__["HomeComponent"]
+                _home_home_component__WEBPACK_IMPORTED_MODULE_18__["HomeComponent"],
+                _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__["GroupdialogComponent"]
             ],
             imports: [
                 _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
@@ -212,18 +215,101 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSelectModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"],
                 _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_16__["OverlayModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoutes)
             ],
             entryComponents: [
                 _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_12__["ServerdialogComponent"],
-                _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_13__["SettingdialogComponent"]
+                _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_13__["SettingdialogComponent"],
+                _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__["GroupdialogComponent"]
             ],
             providers: [_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/groupdialog/groupdialog.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/groupdialog/groupdialog.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/groupdialog/groupdialog.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/groupdialog/groupdialog.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title class=\"middle\">Change group for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <!-- <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.group\">{{data.group}}</textarea> -->\n        <!-- <mat-form-field> -->\n          <mat-label >current group: {{data.group}}</mat-label>\n          <mat-select [(ngModel)]=\"data.group\" #fontSize value=\"16px\" (selectionChange)=\"triggerResize($event)\">\n            <mat-option *ngFor=\"let a of data.grouplist\" [value]=\"a\">{{a}}</mat-option>\n          </mat-select>\n        <!-- </mat-form-field> -->\n        <mat-hint align=\"start\"><strong>Tag the server with group name</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/groupdialog/groupdialog.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/groupdialog/groupdialog.component.ts ***!
+  \******************************************************/
+/*! exports provided: GroupdialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupdialogComponent", function() { return GroupdialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var GroupdialogComponent = /** @class */ (function () {
+    function GroupdialogComponent(dialogRef, data, ngZone) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.ngZone = ngZone;
+    }
+    GroupdialogComponent.prototype.ngOnInit = function () {
+    };
+    GroupdialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    // @ViewChild('autosize') autosize: CdkTextareaAutosize;
+    GroupdialogComponent.prototype.triggerResize = function (data) {
+        // Wait for changes to be applied, then trigger textarea resize.
+        // this.ngZone.onStable.pipe(take(1))
+        //     .subscribe(() => this.autosize.resizeToFitContent(true));
+    };
+    GroupdialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-groupdialog',
+            template: __webpack_require__(/*! ./groupdialog.component.html */ "./src/app/groupdialog/groupdialog.component.html"),
+            styles: [__webpack_require__(/*! ./groupdialog.component.css */ "./src/app/groupdialog/groupdialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
+    ], GroupdialogComponent);
+    return GroupdialogComponent;
 }());
 
 
@@ -437,7 +523,7 @@ var LoginComponent = /** @class */ (function () {
         //   alert("Invalid credentials");
         // }
         var it = this;
-        var req = this.http.post('http://localhost:3000/api/loginsubmit', {
+        var req = this.http.post('/api/loginsubmit', {
             "user": this.username,
             "pass": this.password
         })
@@ -765,7 +851,7 @@ var ServerdialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.mailtd:hover\r\n{\r\n    cursor: pointer;\r\n      background-color: #3f51b5;\r\n      color: white;\r\n}\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
+module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.grouptd\r\n{\r\n    width: 9%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\nhovering\r\n{\r\n\r\n}\r\n\r\n.hovering:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n/* .mailtd:hover\r\n{\r\n\r\n} */\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
 
 /***/ }),
 
@@ -776,7 +862,7 @@ module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 1
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,i)\" class=\"mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
+module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <div class=\"mat-elevation-z8 centered centered\" color=\"primary\">\n    <!-- <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n    </mat-form-field> -->\n    <!-- [(ngModel)]=\"crap\" [checked]=\"false\" -->\n    <!-- <mat-checkbox *ngFor=\"let filter of filters\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(filter,$event.checked)\" color=\"warn\">{{filter}}</mat-checkbox> -->\n    <mat-checkbox *ngFor=\"let item of checklist\" [(ngModel)]=\"item.isSelected\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(item.value,$event.checked)\" color=\"warn\">{{item.value}}</mat-checkbox>\n  </div>\n  <br>\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"group\">\n          <th mat-header-cell *matHeaderCellDef> Group </th>\n          <td mat-cell *matCellDef=\"let server\" (click)=\"openGroupDialog(server.server,server.id,server.group)\" class=\"hovering grouptd\"> {{server.group}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,server.id)\" class=\"hovering mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n      <mat-form-field style=\"position: absolute; bottom:-15px; left:80px;\">\n          <input matInput (keyup)=\"search($event.target.value)\" [disabled]=\"searchdisabled\" placeholder=\"Search\">\n      </mat-form-field>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
 
 /***/ }),
 
@@ -793,9 +879,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../serverdialog/serverdialog.component */ "./src/app/serverdialog/serverdialog.component.ts");
-/* harmony import */ var _servers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./servers.service */ "./src/app/servers/servers.service.ts");
-/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../settings.service */ "./src/app/settings.service.ts");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../groupdialog/groupdialog.component */ "./src/app/groupdialog/groupdialog.component.ts");
+/* harmony import */ var _servers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./servers.service */ "./src/app/servers/servers.service.ts");
+/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../settings.service */ "./src/app/settings.service.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -811,51 +898,71 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SERVER_DATA2 = [
-    { id: 0, server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
+    { id: 0, group: "group1", server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
             "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com" },
-    { id: 1, server: 'harta2', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 2, server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 3, server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 4, server: 'harta211', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" }
+    { id: 1, group: "group1", server: 'harta2', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 2, group: "group1", server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
+    { id: 3, group: "group1", server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
+    { id: 4, group: "group1", server: 'harta211', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" }
 ];
 var SERVER_DATA = [
-    { id: 0, server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
+    { id: 0, group: "group1", server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
             "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com" },
-    { id: 1, server: 'harta2', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 2, server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 3, server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 4, server: 'harta211', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 5, server: 'harta324', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 6, server: 'harta342', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 7, server: 'harta234', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 8, server: 'harta337', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 9, server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 10, server: 'harta777', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 11, server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 12, server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 13, server: 'harta555', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 14, server: 'harta322', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" }
+    { id: 1, group: "group1", server: 'harta2', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 2, group: "group1", server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
+    { id: 3, group: "group1", server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
+    { id: 4, group: "group1", server: 'harta211', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 5, group: "group1", server: 'harta324', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
+    { id: 6, group: "group1", server: 'harta342', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
+    { id: 7, group: "group1", server: 'harta234', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 8, group: "group1", server: 'harta337', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
+    { id: 9, group: "group1", server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
+    { id: 10, group: "group1", server: 'harta777', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 11, group: "group1", server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
+    { id: 12, group: "group1", server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
+    { id: 13, group: "group1", server: 'harta555', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
+    { id: 14, group: "group1", server: 'harta322', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" }
 ];
 var ServersComponent = /** @class */ (function () {
     function ServersComponent(dialog, serversapi, settingsapi) {
         this.dialog = dialog;
         this.serversapi = serversapi;
         this.settingsapi = settingsapi;
-        this.displayedColumns = ['server', 'cpu', 'ram', 'overloaded', 'mail'];
+        // initdata:Server[]=[];
+        // tempdata:Server[]=[];
+        this.displayedColumns = ['group', 'server', 'cpu', 'ram', 'overloaded', 'mail'];
+        this.filters = [];
+        this.checkedfilters = [];
+        this.checklist = [
+            { value: 'Elenor Anderson', isSelected: false },
+            { value: 'Caden Kunze', isSelected: true },
+            { value: 'Ms. Hortense Zulauf', isSelected: true },
+            { value: 'Grady Reichert', isSelected: false },
+            { value: 'Dejon Olson', isSelected: false },
+            { value: 'Jamir Pfannerstill', isSelected: false },
+            { value: 'Aracely Renner DVM', isSelected: false },
+            { value: 'Genoveva Luettgen', isSelected: false }
+        ];
+        this.grouplist = [];
         this.loading = false;
         this.first = true;
         this.yea = true;
+        this.searchdisabled = false;
+        this.crap = false;
         this.peak = 200;
         this.errormsg = "";
         this.animation = false;
     }
     ServersComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.animation = true;
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
-        setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
-        setTimeout(function () { this.dataSource.paginator = this.paginator; }, 1000);
+        //comment this pls before build, client side testing
+        // this.dataSource  = new MatTableDataSource<Server>(SERVER_DATA);
+        // setTimeout(() => this.dataSource.paginator = this.paginator);
+        // this.grouplist = ['proservers','damoy','hamami','useless','amazing'];
+        // this.makeFilters();
+        // ------------------------------
         this.updateTable();
         this.first = false;
     };
@@ -869,6 +976,10 @@ var ServersComponent = /** @class */ (function () {
                 return a.id - b.id;
             });
             _this.getPeakValue();
+            _this.getGroupsList();
+            _this.makeFilters();
+            // this.initdata= SERVER_DATA;
+            // this.tempdata = SERVER_DATA;
             _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
             _this.dataSource.paginator = _this.paginator;
             _this.errormsg = "";
@@ -879,6 +990,20 @@ var ServersComponent = /** @class */ (function () {
             _this.errormsg = "Error getting data from database, try again soon.";
             _this.loading = false;
         });
+    };
+    ServersComponent.prototype.makeFilters = function () {
+        var group;
+        this.filters = [];
+        this.checklist = [];
+        for (var i = 0; i < SERVER_DATA.length; i++) {
+            group = SERVER_DATA[i].group;
+            if (this.filters.indexOf(group) === -1) {
+                this.filters.push(group);
+                this.checklist.push({ value: group, isSelected: false });
+            }
+        }
+        console.log("gwagwagwagwagwagwagwagw");
+        console.log(this.filters);
     };
     ServersComponent.prototype.getPeakValue = function () {
         var _this = this;
@@ -896,10 +1021,51 @@ var ServersComponent = /** @class */ (function () {
             _this.errormsg = "Error getting some data from database, but overall ok";
         });
     };
+    ServersComponent.prototype.getGroupsList = function () {
+        var _this = this;
+        var x = "proservers,damoy,hamami,useless,amazing";
+        this.grouplist = x.split(',');
+        this.settingsapi.getSettings().subscribe(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].name == "groups") {
+                    // let str = data[i].value;
+                    // let cropped = str.slice(0,str.length-1)
+                    _this.grouplist = data[i].value.split(',');
+                    console.log(_this.grouplist);
+                }
+            }
+        }, function (err) {
+            console.log("Error contacting settings service, server down? details: " + JSON.stringify(err));
+            _this.errormsg = "Error getting some data from database, but overall ok";
+        });
+    };
     ServersComponent.prototype.updateServers = function (data) {
         var _this = this;
-        this.serversapi.postsmails(data).subscribe(function (res) {
-            if (res.status) {
+        // this.makeFilters();
+        this.serversapi.postmails(data).subscribe(function (res) {
+            if (res.hack) {
+                console.log("nice cheater");
+                _this.errormsg = "Nice try, but it won't work";
+            }
+            else if (res.status) {
+                // this.updateTable();
+                console.log("succesful servers update!");
+            }
+            else {
+                console.log("failed servers update.");
+                _this.errormsg = "Error getting data from database, try again soon.";
+            }
+        });
+    };
+    ServersComponent.prototype.updateGroups = function (data) {
+        var _this = this;
+        this.makeFilters();
+        this.serversapi.postgroups(data).subscribe(function (res) {
+            if (res.hack) {
+                console.log("nice cheater");
+                _this.errormsg = "Nice try, but it won't work";
+            }
+            else if (res.status) {
                 // this.updateTable();
                 console.log("succesful servers update!");
             }
@@ -918,6 +1084,7 @@ var ServersComponent = /** @class */ (function () {
     };
     ServersComponent.prototype.openDialog = function (server, mails, index) {
         var _this = this;
+        console.log(server + " " + mails + " " + index);
         var dialogRef = this.dialog.open(_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_2__["ServerdialogComponent"], {
             width: '450px',
             data: { server: server, mails: mails, index: index }
@@ -930,6 +1097,119 @@ var ServersComponent = /** @class */ (function () {
             }
         });
     };
+    ServersComponent.prototype.openGroupDialog = function (server, index, group) {
+        var _this = this;
+        var oldgroup = group;
+        console.log(server + " " + group + " " + index);
+        var dialogRef = this.dialog.open(_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_3__["GroupdialogComponent"], {
+            width: '450px',
+            data: { server: server, index: index, group: group, grouplist: this.grouplist }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log(result);
+            if (result) {
+                _this.uncheckAll();
+                _this.filters = [];
+                _this.checkedfilters = [];
+                console.log("??? " + _this.crap);
+                SERVER_DATA[result.index].group = result.group;
+                _this.updateGroups({ server: SERVER_DATA[result.index].server, group: SERVER_DATA[result.index].group });
+                // let index = this.checkedfilters.indexOf(oldgroup);
+                // this.checkedfilters.splice(index,1);
+                console.log("WIPE NOW");
+                // setTimeout(() => this.crap = false);
+                _this.checkedfilters = [];
+                console.log("aaaaaaaaaaaaAAAAAAAAAAAAAAA");
+                console.log(_this.checkedfilters);
+                console.log(_this.filters);
+                _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
+                _this.dataSource.paginator = _this.paginator;
+                setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+                // this.checkedfilters.push(result.group);
+                // console.log("aaaaaaaaaaaaAAAAAAAAAAAAAAA");
+                // console.log(this.checkedfilters);
+                // this.makeFilters();
+                // this.parseFilterData();
+            }
+        });
+    };
+    ServersComponent.prototype.parseFilterData = function () {
+        var _this = this;
+        var groups = [];
+        var currentdata = SERVER_DATA;
+        // this.tempdata = currentdata;
+        var newdata = [];
+        console.log("FUCK OFF PEICE OF SHIT " + this.checkedfilters);
+        for (var i = 0; i < currentdata.length; i++) {
+            for (var j = 0; j < this.checkedfilters.length; j++) {
+                if (currentdata[i].group == this.checkedfilters[j]) {
+                    newdata.push(currentdata[i]);
+                }
+            }
+        }
+        console.log("parsed new data");
+        console.log(newdata);
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](newdata);
+        console.log(this.dataSource.paginator);
+        console.log(this.paginator);
+        this.dataSource.paginator = this.paginator;
+        console.log(this.dataSource.paginator);
+        setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+        // setTimeout(this.poop.bind(this), 2000);
+    };
+    ServersComponent.prototype.checkBoxClick = function (filter, checked) {
+        // let a = [];
+        // a = this.dataSource.data;
+        // a = a.filter((this.filterbyGroup(filter)))
+        // console.log(a);
+        var _this = this;
+        if (checked) {
+            console.log("HELLO?!?!?!? " + filter);
+            this.checkedfilters.push(filter);
+            for (var i = 0; i < this.checklist.length; i++) {
+                if (this.checklist[i].value == filter) {
+                    this.checklist[i].isSelected = true;
+                }
+            }
+            console.log("You checked " + checked + " and here checked filters: " + this.checkedfilters);
+            this.parseFilterData();
+        }
+        else {
+            // console.log("You checked "+checked+" and here checked filters: "+this.checkedfilters);
+            var index = this.checkedfilters.indexOf(filter);
+            this.checkedfilters.splice(index, 1);
+            for (var i = 0; i < this.checklist.length; i++) {
+                if (this.checklist[i].value == filter) {
+                    this.checklist[i].isSelected = false;
+                }
+            }
+            console.log("You checked " + checked + " and here checked filters: " + this.checkedfilters);
+            if (this.checkedfilters.length == 0) {
+                console.log("here u should get init data..");
+                this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
+                setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+            }
+            else {
+                console.log("here u should get tmp data");
+                // this.dataSource = new MatTableDataSource<Server>(this.tempdata);
+                // this.dataSource.paginator = this.paginator;
+                this.parseFilterData();
+            }
+        }
+    };
+    ServersComponent.prototype.uncheckAll = function () {
+        for (var i = 0; i < this.checklist.length; i++) {
+            this.checklist[i].isSelected = false;
+        }
+    };
+    ServersComponent.prototype.applyFilter = function (filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+        console.log("HAHAH " + this.dataSource.filter);
+    };
+    ServersComponent.prototype.search = function (filterValue) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+        console.log("HAHAH " + this.dataSource.filter);
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"]),
         __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
@@ -940,18 +1220,18 @@ var ServersComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./servers.component.html */ "./src/app/servers/servers.component.html"),
             styles: [__webpack_require__(/*! ./servers.component.css */ "./src/app/servers/servers.component.css")],
             animations: [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])('slideInOut', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(':enter', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(-100%)' }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(0%)' }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('slideInOut', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(-100%)' }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(0%)' }))
                     ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(':leave', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(0%)' }))
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])(':leave', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(0%)' }))
                     ])
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _servers_service__WEBPACK_IMPORTED_MODULE_3__["ServersService"], _settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _settings_service__WEBPACK_IMPORTED_MODULE_5__["SettingsService"]])
     ], ServersComponent);
     return ServersComponent;
 }());
@@ -994,8 +1274,11 @@ var ServersService = /** @class */ (function () {
     ServersService.prototype.postservers = function (data) {
         return this.http.post(host + '/api/postservers', data);
     };
-    ServersService.prototype.postsmails = function (data) {
+    ServersService.prototype.postmails = function (data) {
         return this.http.post(host + '/api/postmails', data);
+    };
+    ServersService.prototype.postgroups = function (data) {
+        return this.http.post(host + '/api/postgroups', data);
     };
     ServersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

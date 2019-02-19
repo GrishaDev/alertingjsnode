@@ -22,7 +22,7 @@ class service
         // this.mongoer.insertServers(serverstemplate);
 
         // comment this for less stress:
-        this.randomData();
+       // this.randomData();
     }
 
     async randomData()

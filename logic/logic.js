@@ -74,6 +74,9 @@ class methods
         let data = await this.mongoer.getServers();
 
         let maildata = await this.mongoer.getMails();
+        let groupdata = await this.mongoer.getGroups();
+
+       // console.log(groupdata);
 
         if(data === "error")
         {
@@ -86,13 +89,24 @@ class methods
 
             for(let i=0; i<data.length;i++)
             {
-                configjsn.push({id:data[i].id,server:data[i].server,cpu:data[i].cpu,ram:data[i].ram,overloaded:data[i].overloaded,mail:"default@mail.com"});
+                configjsn.push({id:data[i].id,group:"None",server:data[i].server,cpu:data[i].cpu,ram:data[i].ram,overloaded:data[i].overloaded,mail:"default@mail.com"});
                // configjsn[i].mail = "default@mail.com";
                 for(let j=0; j<maildata.length; j++)
                 {
                     if(maildata[j].server == data[i].server)
                     {
                         configjsn[i].mail = maildata[j].mail;
+                    }
+                }
+
+                
+                for(let x=0; x<groupdata.length; x++)
+                {
+                    // console.log(groupdata[x].server+ " AND "+data[i].server);
+                    if(groupdata[x].server == data[i].server)
+                    {
+                       // console.log("AM I HERE 2 ");
+                        configjsn[i].group = groupdata[x].group;
                     }
                 }
                // if(maildata[i].server == data[i].server
@@ -115,8 +129,20 @@ class methods
 
     async postMails(res,req)
     {
+        console.log("AM I HERE 3");
         console.log(req.body);
         await this.mongoer.insertMails(req.body);
+        res.header("Access-Control-Allow-Origin", "*");
+        res.writeHead(200, {"Content-Type": "application/json"});
+        res.write(JSON.stringify({status:true}));
+        res.end();
+    }
+
+    async postGroups(res,req)
+    {
+        console.log("AM I HERE 3");
+        console.log(req.body);
+        await this.mongoer.insertGroups(req.body);
         res.header("Access-Control-Allow-Origin", "*");
         res.writeHead(200, {"Content-Type": "application/json"});
         res.write(JSON.stringify({status:true}));

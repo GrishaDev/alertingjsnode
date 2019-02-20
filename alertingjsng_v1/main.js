@@ -56,58 +56,22 @@ module.exports = "\n<router-outlet></router-outlet>\n<!-- [class.dark-theme]=\"s
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./settings.service */ "./src/app/settings.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(newsapi) {
-        this.newsapi = newsapi;
-        this.title = 'alertingjsng';
-        this.statuscolor = 'darkgreen';
-        this.statustr = 'running';
-        this.status = true;
-        this.content = 0;
-        console.log('app component constructor called');
+    function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.options = ['Settings', 'Servers'];
-    };
-    AppComponent.prototype.changeStatus = function () {
-        if (this.status) {
-            this.status = false;
-            this.statuscolor = 'red';
-            this.statustr = 'down';
-        }
-        else {
-            this.status = true;
-            this.statuscolor = 'darkgreen';
-            this.statustr = 'running';
-        }
-    };
-    AppComponent.prototype.navPress = function (option) {
-        if (option == "Settings") {
-            this.content = 0;
-        }
-        else if (option == "Servers") {
-            this.content = 1;
-        }
-    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        }),
-        __metadata("design:paramtypes", [_settings_service__WEBPACK_IMPORTED_MODULE_1__["SettingsService"]])
+        })
     ], AppComponent);
     return AppComponent;
 }());
@@ -129,29 +93,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings.service */ "./src/app/settings.service.ts");
+/* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings/settings.service */ "./src/app/settings/settings.service.ts");
 /* harmony import */ var _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./servers/servers.service */ "./src/app/servers/servers.service.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _servers_servers_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./servers/servers.component */ "./src/app/servers/servers.component.ts");
-/* harmony import */ var _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./serverdialog/serverdialog.component */ "./src/app/serverdialog/serverdialog.component.ts");
-/* harmony import */ var _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./settingdialog/settingdialog.component */ "./src/app/settingdialog/settingdialog.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
-/* harmony import */ var _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./testingarea/testingarea.component */ "./src/app/testingarea/testingarea.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./groupdialog/groupdialog.component */ "./src/app/groupdialog/groupdialog.component.ts");
+/* harmony import */ var _logic_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./logic.service */ "./src/app/logic.service.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _servers_servers_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./servers/servers.component */ "./src/app/servers/servers.component.ts");
+/* harmony import */ var _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./servers/serverdialog/serverdialog.component */ "./src/app/servers/serverdialog/serverdialog.component.ts");
+/* harmony import */ var _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./settings/settingdialog/settingdialog.component */ "./src/app/settings/settingdialog/settingdialog.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
+/* harmony import */ var _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./testingarea/testingarea.component */ "./src/app/testingarea/testingarea.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./servers/groupdialog/groupdialog.component */ "./src/app/servers/groupdialog/groupdialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -174,8 +140,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var appRoutes = [
-    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"] },
-    { path: 'main', component: _main_main_component__WEBPACK_IMPORTED_MODULE_15__["MainComponent"] },
+    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"] },
+    { path: 'main', component: _main_main_component__WEBPACK_IMPORTED_MODULE_16__["MainComponent"] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -183,133 +149,52 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_10__["SettingsComponent"],
-                _servers_servers_component__WEBPACK_IMPORTED_MODULE_11__["ServersComponent"],
-                _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_12__["ServerdialogComponent"],
-                _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_13__["SettingdialogComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_14__["LoginComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_15__["MainComponent"],
-                _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_17__["TestingareaComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_18__["HomeComponent"],
-                _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__["GroupdialogComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_11__["SettingsComponent"],
+                _servers_servers_component__WEBPACK_IMPORTED_MODULE_12__["ServersComponent"],
+                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__["ServerdialogComponent"],
+                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__["SettingdialogComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_16__["MainComponent"],
+                _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_18__["TestingareaComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"],
+                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__["GroupdialogComponent"]
             ],
             imports: [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatOptionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCheckboxModule"],
-                _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_16__["OverlayModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(appRoutes)
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatOptionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatProgressSpinnerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCheckboxModule"],
+                _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_17__["OverlayModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(appRoutes)
             ],
             entryComponents: [
-                _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_12__["ServerdialogComponent"],
-                _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_13__["SettingdialogComponent"],
-                _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_19__["GroupdialogComponent"]
+                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__["ServerdialogComponent"],
+                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__["SettingdialogComponent"],
+                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__["GroupdialogComponent"]
             ],
-            providers: [_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+            providers: [_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _logic_service__WEBPACK_IMPORTED_MODULE_5__["LogicService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/groupdialog/groupdialog.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/groupdialog/groupdialog.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
-
-/***/ }),
-
-/***/ "./src/app/groupdialog/groupdialog.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/groupdialog/groupdialog.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<h1 mat-dialog-title class=\"middle\">Change group for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <!-- <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.group\">{{data.group}}</textarea> -->\n        <!-- <mat-form-field> -->\n          <mat-label >current group: {{data.group}}</mat-label>\n          <mat-select [(ngModel)]=\"data.group\" #fontSize value=\"16px\" (selectionChange)=\"triggerResize($event)\">\n            <mat-option *ngFor=\"let a of data.grouplist\" [value]=\"a\">{{a}}</mat-option>\n          </mat-select>\n        <!-- </mat-form-field> -->\n        <mat-hint align=\"start\"><strong>Tag the server with group name</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/groupdialog/groupdialog.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/groupdialog/groupdialog.component.ts ***!
-  \******************************************************/
-/*! exports provided: GroupdialogComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupdialogComponent", function() { return GroupdialogComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-var GroupdialogComponent = /** @class */ (function () {
-    function GroupdialogComponent(dialogRef, data, ngZone) {
-        this.dialogRef = dialogRef;
-        this.data = data;
-        this.ngZone = ngZone;
-    }
-    GroupdialogComponent.prototype.ngOnInit = function () {
-    };
-    GroupdialogComponent.prototype.onNoClick = function () {
-        this.dialogRef.close();
-    };
-    // @ViewChild('autosize') autosize: CdkTextareaAutosize;
-    GroupdialogComponent.prototype.triggerResize = function (data) {
-        // Wait for changes to be applied, then trigger textarea resize.
-        // this.ngZone.onStable.pipe(take(1))
-        //     .subscribe(() => this.autosize.resizeToFitContent(true));
-    };
-    GroupdialogComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-groupdialog',
-            template: __webpack_require__(/*! ./groupdialog.component.html */ "./src/app/groupdialog/groupdialog.component.html"),
-            styles: [__webpack_require__(/*! ./groupdialog.component.css */ "./src/app/groupdialog/groupdialog.component.css")]
-        }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
-    ], GroupdialogComponent);
-    return GroupdialogComponent;
 }());
 
 
@@ -447,6 +332,106 @@ var HomeService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], HomeService);
     return HomeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/logic.service.ts":
+/*!**********************************!*\
+  !*** ./src/app/logic.service.ts ***!
+  \**********************************/
+/*! exports provided: LogicService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogicService", function() { return LogicService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LogicService = /** @class */ (function () {
+    function LogicService() {
+    }
+    LogicService.prototype.makeData = function (data, checkedfilters) {
+        var currentdata = data;
+        ;
+        var newdata = [];
+        for (var i = 0; i < currentdata.length; i++) {
+            for (var j = 0; j < checkedfilters.length; j++) {
+                if (currentdata[i].group == checkedfilters[j]) {
+                    newdata.push(currentdata[i]);
+                }
+            }
+        }
+        return newdata;
+    };
+    LogicService.prototype.tickChecklist = function (checklist, filter, value) {
+        for (var i = 0; i < checklist.length; i++) {
+            if (checklist[i].value == filter) {
+                checklist[i].isSelected = value;
+            }
+        }
+        return checklist;
+    };
+    LogicService.prototype.uncheckAll = function (checklist) {
+        for (var i = 0; i < checklist.length; i++) {
+            checklist[i].isSelected = false;
+        }
+        return checklist;
+    };
+    LogicService.prototype.searchSettings = function (data, setting) {
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].name == setting) {
+                return data[i].value;
+            }
+        }
+        return '';
+    };
+    LogicService.prototype.createCheckList = function (data) {
+        var group;
+        var checklist = [];
+        for (var i = 0; i < data.length; i++) {
+            group = data[i].group;
+            if (!this.groupExists(checklist, group)) {
+                checklist.push({ value: group, isSelected: false });
+            }
+        }
+        return checklist;
+    };
+    LogicService.prototype.groupExists = function (checklist, group) {
+        for (var i = 0; i < checklist.length; i++) {
+            if (checklist[i].value == group) {
+                return true;
+            }
+        }
+        return false;
+    };
+    LogicService.prototype.getCheckedFilters = function (checklist) {
+        var checkedfilters = [];
+        for (var i = 0; i < checklist.length; i++) {
+            if (checklist[i].isSelected) {
+                checkedfilters.push(checklist[i].value);
+            }
+        }
+        return checkedfilters;
+    };
+    LogicService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [])
+    ], LogicService);
+    return LogicService;
 }());
 
 
@@ -725,9 +710,6 @@ var MainComponent = /** @class */ (function () {
         console.log(this.content);
     };
     MainComponent.prototype.toggleTheme = function () {
-        // let dark = 'dark-theme';
-        // let theme2 = 'light-theme';
-        // let light = 'default-theme';
         this.darktheme = !this.darktheme;
         if (this.darktheme) {
             this.overlayContainer.getContainerElement().classList.add(dark);
@@ -771,10 +753,10 @@ var MainComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/serverdialog/serverdialog.component.css":
-/*!*********************************************************!*\
-  !*** ./src/app/serverdialog/serverdialog.component.css ***!
-  \*********************************************************/
+/***/ "./src/app/servers/groupdialog/groupdialog.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/servers/groupdialog/groupdialog.component.css ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -782,21 +764,102 @@ module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spac
 
 /***/ }),
 
-/***/ "./src/app/serverdialog/serverdialog.component.html":
-/*!**********************************************************!*\
-  !*** ./src/app/serverdialog/serverdialog.component.html ***!
-  \**********************************************************/
+/***/ "./src/app/servers/groupdialog/groupdialog.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/servers/groupdialog/groupdialog.component.html ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title class=\"middle\">Change mail recievers for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <!-- <ul>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> banana\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === '324'\">&#10003;</span> da\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> harta\n    </li>\n  </ul> -->\n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.mails\">{{data.mails}}</textarea>\n        <mat-hint align=\"start\"><strong>Include ' , ' between mails to make a list</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
+module.exports = "<h1 mat-dialog-title class=\"middle\">Change group for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <!-- <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.group\">{{data.group}}</textarea> -->\n        <!-- <mat-form-field> -->\n          <mat-label >current group: {{data.group}}</mat-label>\n          <mat-select [(ngModel)]=\"data.group\" #fontSize value=\"16px\" (selectionChange)=\"triggerResize($event)\">\n            <mat-option *ngFor=\"let a of data.grouplist\" [value]=\"a\">{{a}}</mat-option>\n          </mat-select>\n        <!-- </mat-form-field> -->\n        <!-- <mat-hint align=\"start\"><strong>Tag the server with group name</strong> </mat-hint> -->\n        <!-- <br>\n        <br>\n        <br> -->\n  </mat-form-field>\n\n</div>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/serverdialog/serverdialog.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/serverdialog/serverdialog.component.ts ***!
-  \********************************************************/
+/***/ "./src/app/servers/groupdialog/groupdialog.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/servers/groupdialog/groupdialog.component.ts ***!
+  \**************************************************************/
+/*! exports provided: GroupdialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupdialogComponent", function() { return GroupdialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var GroupdialogComponent = /** @class */ (function () {
+    function GroupdialogComponent(dialogRef, data, ngZone) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.ngZone = ngZone;
+    }
+    GroupdialogComponent.prototype.ngOnInit = function () {
+    };
+    GroupdialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    // @ViewChild('autosize') autosize: CdkTextareaAutosize;
+    GroupdialogComponent.prototype.triggerResize = function (data) {
+        // Wait for changes to be applied, then trigger textarea resize.
+        // this.ngZone.onStable.pipe(take(1))
+        //     .subscribe(() => this.autosize.resizeToFitContent(true));
+    };
+    GroupdialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-groupdialog',
+            template: __webpack_require__(/*! ./groupdialog.component.html */ "./src/app/servers/groupdialog/groupdialog.component.html"),
+            styles: [__webpack_require__(/*! ./groupdialog.component.css */ "./src/app/servers/groupdialog/groupdialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
+    ], GroupdialogComponent);
+    return GroupdialogComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/servers/serverdialog/serverdialog.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/servers/serverdialog/serverdialog.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/servers/serverdialog/serverdialog.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/servers/serverdialog/serverdialog.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title class=\"middle\">Change mail recievers for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <!-- <ul>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> banana\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === '324'\">&#10003;</span> da\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> harta\n    </li>\n  </ul> -->\n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.mails\">{{data.mails}}</textarea>\n        <mat-hint align=\"start\"><strong>Include ' , ' between mails to make a list</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<br>\n<mat-checkbox [(ngModel)]=\"data.tick\" style=\"margin-left: 0;\" color=\"warn\">Include for every member of group {{data.group}}?</mat-checkbox>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/servers/serverdialog/serverdialog.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/servers/serverdialog/serverdialog.component.ts ***!
+  \****************************************************************/
 /*! exports provided: ServerdialogComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -830,8 +893,8 @@ var ServerdialogComponent = /** @class */ (function () {
     ServerdialogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-serverdialog',
-            template: __webpack_require__(/*! ./serverdialog.component.html */ "./src/app/serverdialog/serverdialog.component.html"),
-            styles: [__webpack_require__(/*! ./serverdialog.component.css */ "./src/app/serverdialog/serverdialog.component.css")]
+            template: __webpack_require__(/*! ./serverdialog.component.html */ "./src/app/servers/serverdialog/serverdialog.component.html"),
+            styles: [__webpack_require__(/*! ./serverdialog.component.css */ "./src/app/servers/serverdialog/serverdialog.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
@@ -851,7 +914,7 @@ var ServerdialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.grouptd\r\n{\r\n    width: 9%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\nhovering\r\n{\r\n\r\n}\r\n\r\n.hovering:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n/* .mailtd:hover\r\n{\r\n\r\n} */\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
+module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.filters {\r\n    padding: 0;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.grouptd\r\n{\r\n    width: 9%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    text-align: left;\r\n    /* word-break: break-all; */\r\n}\r\n\r\nhovering\r\n{\r\n\r\n}\r\n\r\n.hovering:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n/* .mailtd:hover\r\n{\r\n\r\n} */\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
 
 /***/ }),
 
@@ -862,7 +925,7 @@ module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 1
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <div class=\"mat-elevation-z8 centered centered\" color=\"primary\">\n    <!-- <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n    </mat-form-field> -->\n    <!-- [(ngModel)]=\"crap\" [checked]=\"false\" -->\n    <!-- <mat-checkbox *ngFor=\"let filter of filters\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(filter,$event.checked)\" color=\"warn\">{{filter}}</mat-checkbox> -->\n    <mat-checkbox *ngFor=\"let item of checklist\" [(ngModel)]=\"item.isSelected\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(item.value,$event.checked)\" color=\"warn\">{{item.value}}</mat-checkbox>\n  </div>\n  <br>\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"group\">\n          <th mat-header-cell *matHeaderCellDef> Group </th>\n          <td mat-cell *matCellDef=\"let server\" (click)=\"openGroupDialog(server.server,server.id,server.group)\" class=\"hovering grouptd\"> {{server.group}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,server.id)\" class=\"hovering mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n      <mat-form-field style=\"position: absolute; bottom:-15px; left:80px;\">\n          <input matInput (keyup)=\"search($event.target.value)\" [disabled]=\"searchdisabled\" placeholder=\"Search\">\n      </mat-form-field>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
+module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <mat-card class=\"mat-elevation-z8 centered filters\" color=\"primary\">\n    <!-- <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n    </mat-form-field> -->\n    <!-- [(ngModel)]=\"crap\" [checked]=\"false\" -->\n    <!-- <mat-checkbox *ngFor=\"let filter of filters\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(filter,$event.checked)\" color=\"warn\">{{filter}}</mat-checkbox> -->\n    <mat-checkbox *ngFor=\"let item of checklist\" [(ngModel)]=\"item.isSelected\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(item.value,$event.checked)\" color=\"warn\">{{item.value}}</mat-checkbox>\n  </mat-card>\n  <br>\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"group\">\n          <th mat-header-cell *matHeaderCellDef> Group </th>\n          <td mat-cell *matCellDef=\"let server\" (click)=\"openGroupDialog(server.server,server.id,server.group)\" class=\"hovering grouptd\"> {{server.group}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,server.id,server.group)\" class=\"hovering mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n      <mat-form-field style=\"position: absolute; bottom:-15px; left:80px;\">\n          <input matInput (keyup)=\"search($event.target.value)\" [disabled]=\"searchdisabled\" placeholder=\"Search\">\n      </mat-form-field>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
 
 /***/ }),
 
@@ -878,11 +941,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServersComponent", function() { return ServersComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../serverdialog/serverdialog.component */ "./src/app/serverdialog/serverdialog.component.ts");
-/* harmony import */ var _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../groupdialog/groupdialog.component */ "./src/app/groupdialog/groupdialog.component.ts");
+/* harmony import */ var _serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./serverdialog/serverdialog.component */ "./src/app/servers/serverdialog/serverdialog.component.ts");
+/* harmony import */ var _groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./groupdialog/groupdialog.component */ "./src/app/servers/groupdialog/groupdialog.component.ts");
 /* harmony import */ var _servers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./servers.service */ "./src/app/servers/servers.service.ts");
-/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../settings.service */ "./src/app/settings.service.ts");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../settings/settings.service */ "./src/app/settings/settings.service.ts");
+/* harmony import */ var _logic_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../logic.service */ "./src/app/logic.service.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -899,14 +963,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var SERVER_DATA2 = [
-    { id: 0, group: "group1", server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
-            "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com" },
-    { id: 1, group: "group1", server: 'harta2', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" },
-    { id: 2, group: "group1", server: 'harta3', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" },
-    { id: 3, group: "group1", server: 'harta324', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com" },
-    { id: 4, group: "group1", server: 'harta211', cpu: 22, ram: 12, overloaded: false, mail: "pringles@hey.com" }
-];
+
 var SERVER_DATA = [
     { id: 0, group: "group1", server: 'harta', cpu: 92, ram: 52, overloaded: true, mail: "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com," +
             "dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com,dada@gmail.com,pringles@hey.com" },
@@ -926,25 +983,13 @@ var SERVER_DATA = [
     { id: 14, group: "group1", server: 'harta322', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" }
 ];
 var ServersComponent = /** @class */ (function () {
-    function ServersComponent(dialog, serversapi, settingsapi) {
+    function ServersComponent(dialog, serversapi, settingsapi, logic) {
         this.dialog = dialog;
         this.serversapi = serversapi;
         this.settingsapi = settingsapi;
-        // initdata:Server[]=[];
-        // tempdata:Server[]=[];
+        this.logic = logic;
         this.displayedColumns = ['group', 'server', 'cpu', 'ram', 'overloaded', 'mail'];
-        this.filters = [];
-        this.checkedfilters = [];
-        this.checklist = [
-            { value: 'Elenor Anderson', isSelected: false },
-            { value: 'Caden Kunze', isSelected: true },
-            { value: 'Ms. Hortense Zulauf', isSelected: true },
-            { value: 'Grady Reichert', isSelected: false },
-            { value: 'Dejon Olson', isSelected: false },
-            { value: 'Jamir Pfannerstill', isSelected: false },
-            { value: 'Aracely Renner DVM', isSelected: false },
-            { value: 'Genoveva Luettgen', isSelected: false }
-        ];
+        this.checklist = [];
         this.grouplist = [];
         this.loading = false;
         this.first = true;
@@ -957,6 +1002,7 @@ var ServersComponent = /** @class */ (function () {
     }
     ServersComponent.prototype.ngOnInit = function () {
         this.animation = true;
+        console.log("Hello there ");
         //comment this pls before build, client side testing
         // this.dataSource  = new MatTableDataSource<Server>(SERVER_DATA);
         // setTimeout(() => this.dataSource.paginator = this.paginator);
@@ -978,8 +1024,6 @@ var ServersComponent = /** @class */ (function () {
             _this.getPeakValue();
             _this.getGroupsList();
             _this.makeFilters();
-            // this.initdata= SERVER_DATA;
-            // this.tempdata = SERVER_DATA;
             _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
             _this.dataSource.paginator = _this.paginator;
             _this.errormsg = "";
@@ -992,48 +1036,27 @@ var ServersComponent = /** @class */ (function () {
         });
     };
     ServersComponent.prototype.makeFilters = function () {
-        var group;
-        this.filters = [];
         this.checklist = [];
-        for (var i = 0; i < SERVER_DATA.length; i++) {
-            group = SERVER_DATA[i].group;
-            if (this.filters.indexOf(group) === -1) {
-                this.filters.push(group);
-                this.checklist.push({ value: group, isSelected: false });
-            }
-        }
-        console.log("gwagwagwagwagwagwagwagw");
-        console.log(this.filters);
+        this.checklist = this.logic.createCheckList(SERVER_DATA);
     };
     ServersComponent.prototype.getPeakValue = function () {
         var _this = this;
         this.settingsapi.getSettings().subscribe(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].name == "peak") {
-                    var str = data[i].value;
-                    var cropped = str.slice(0, str.length - 1);
-                    _this.peak = Number(cropped);
-                    console.log(_this.peak);
-                }
-            }
+            var str = _this.logic.searchSettings(data, "groups");
+            var cropped = str.slice(0, str.length - 1);
+            _this.peak = Number(cropped);
+            console.log(_this.peak);
         }, function (err) {
             console.log("Error contacting settings service, server down? details: " + JSON.stringify(err));
             _this.errormsg = "Error getting some data from database, but overall ok";
         });
     };
     ServersComponent.prototype.getGroupsList = function () {
+        // var x = "proservers,damoy,hamami,useless,amazing";
+        // this.grouplist = x.split(',');
         var _this = this;
-        var x = "proservers,damoy,hamami,useless,amazing";
-        this.grouplist = x.split(',');
         this.settingsapi.getSettings().subscribe(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].name == "groups") {
-                    // let str = data[i].value;
-                    // let cropped = str.slice(0,str.length-1)
-                    _this.grouplist = data[i].value.split(',');
-                    console.log(_this.grouplist);
-                }
-            }
+            _this.grouplist = _this.logic.searchSettings(data, "groups").split(',');
         }, function (err) {
             console.log("Error contacting settings service, server down? details: " + JSON.stringify(err));
             _this.errormsg = "Error getting some data from database, but overall ok";
@@ -1051,10 +1074,9 @@ var ServersComponent = /** @class */ (function () {
                 // this.updateTable();
                 console.log("succesful servers update!");
             }
-            else {
-                console.log("failed servers update.");
-                _this.errormsg = "Error getting data from database, try again soon.";
-            }
+        }, function (err) {
+            console.log("Error contacting servers service, server down? details: " + JSON.stringify(err));
+            _this.errormsg = "Error updating mails, try again soon";
         });
     };
     ServersComponent.prototype.updateGroups = function (data) {
@@ -1069,31 +1091,34 @@ var ServersComponent = /** @class */ (function () {
                 // this.updateTable();
                 console.log("succesful servers update!");
             }
-            else {
-                console.log("failed servers update.");
-                _this.errormsg = "Error getting data from database, try again soon.";
-            }
+        }, function (err) {
+            console.log("Error contacting servers service, server down? details: " + JSON.stringify(err));
+            _this.errormsg = "Error updating groups, try again soon";
         });
     };
-    ServersComponent.prototype.parsemaildata = function (data) {
-        var maildata = [];
-        for (var i = 0; i < data.length; i++) {
-            maildata.push({ server: data[i].server, mail: data[i].mail });
-        }
-        return maildata;
-    };
-    ServersComponent.prototype.openDialog = function (server, mails, index) {
+    ServersComponent.prototype.openDialog = function (server, mails, index, group) {
         var _this = this;
         console.log(server + " " + mails + " " + index);
         var dialogRef = this.dialog.open(_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_2__["ServerdialogComponent"], {
             width: '450px',
-            data: { server: server, mails: mails, index: index }
+            data: { server: server, mails: mails, index: index, group: group, tick: false }
         });
         dialogRef.afterClosed().subscribe(function (result) {
             console.log(result);
             if (result) {
-                SERVER_DATA[result.index].mail = result.mails;
-                _this.updateServers({ server: SERVER_DATA[result.index].server, mail: SERVER_DATA[result.index].mail });
+                console.log("you ticked " + result.tick);
+                if (result.tick) {
+                    for (var i = 0; i < SERVER_DATA.length; i++) {
+                        if (SERVER_DATA[i].group == result.group) {
+                            SERVER_DATA[i].mail = result.mails;
+                            _this.updateServers({ server: SERVER_DATA[i].server, mail: SERVER_DATA[i].mail });
+                        }
+                    }
+                }
+                else {
+                    SERVER_DATA[result.index].mail = result.mails;
+                    _this.updateServers({ server: SERVER_DATA[result.index].server, mail: SERVER_DATA[result.index].mail });
+                }
             }
         });
     };
@@ -1108,103 +1133,48 @@ var ServersComponent = /** @class */ (function () {
         dialogRef.afterClosed().subscribe(function (result) {
             console.log(result);
             if (result) {
-                _this.uncheckAll();
-                _this.filters = [];
-                _this.checkedfilters = [];
-                console.log("??? " + _this.crap);
+                // this.uncheckAll();
+                _this.checklist = _this.logic.uncheckAll(_this.checklist);
                 SERVER_DATA[result.index].group = result.group;
                 _this.updateGroups({ server: SERVER_DATA[result.index].server, group: SERVER_DATA[result.index].group });
-                // let index = this.checkedfilters.indexOf(oldgroup);
-                // this.checkedfilters.splice(index,1);
-                console.log("WIPE NOW");
-                // setTimeout(() => this.crap = false);
-                _this.checkedfilters = [];
-                console.log("aaaaaaaaaaaaAAAAAAAAAAAAAAA");
-                console.log(_this.checkedfilters);
-                console.log(_this.filters);
                 _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
                 _this.dataSource.paginator = _this.paginator;
                 setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
-                // this.checkedfilters.push(result.group);
-                // console.log("aaaaaaaaaaaaAAAAAAAAAAAAAAA");
-                // console.log(this.checkedfilters);
-                // this.makeFilters();
-                // this.parseFilterData();
             }
         });
     };
     ServersComponent.prototype.parseFilterData = function () {
         var _this = this;
-        var groups = [];
-        var currentdata = SERVER_DATA;
-        // this.tempdata = currentdata;
-        var newdata = [];
-        console.log("FUCK OFF PEICE OF SHIT " + this.checkedfilters);
-        for (var i = 0; i < currentdata.length; i++) {
-            for (var j = 0; j < this.checkedfilters.length; j++) {
-                if (currentdata[i].group == this.checkedfilters[j]) {
-                    newdata.push(currentdata[i]);
-                }
-            }
-        }
-        console.log("parsed new data");
-        console.log(newdata);
+        var checkedfilters = this.logic.getCheckedFilters(this.checklist);
+        // console.log(checkedfilters);
+        var newdata = this.logic.makeData(SERVER_DATA, checkedfilters);
+        // console.log(newdata);
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](newdata);
-        console.log(this.dataSource.paginator);
-        console.log(this.paginator);
         this.dataSource.paginator = this.paginator;
-        console.log(this.dataSource.paginator);
         setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
-        // setTimeout(this.poop.bind(this), 2000);
     };
     ServersComponent.prototype.checkBoxClick = function (filter, checked) {
-        // let a = [];
-        // a = this.dataSource.data;
-        // a = a.filter((this.filterbyGroup(filter)))
-        // console.log(a);
         var _this = this;
         if (checked) {
-            console.log("HELLO?!?!?!? " + filter);
-            this.checkedfilters.push(filter);
-            for (var i = 0; i < this.checklist.length; i++) {
-                if (this.checklist[i].value == filter) {
-                    this.checklist[i].isSelected = true;
-                }
-            }
-            console.log("You checked " + checked + " and here checked filters: " + this.checkedfilters);
+            // this.checkedfilters.push(filter);
+            this.checklist = this.logic.tickChecklist(this.checklist, filter, true);
+            console.log(this.checklist);
+            // console.log("You checked "+checked+" and here checked filters: "+this.checkedfilters);
             this.parseFilterData();
         }
         else {
+            this.checklist = this.logic.tickChecklist(this.checklist, filter, false);
             // console.log("You checked "+checked+" and here checked filters: "+this.checkedfilters);
-            var index = this.checkedfilters.indexOf(filter);
-            this.checkedfilters.splice(index, 1);
-            for (var i = 0; i < this.checklist.length; i++) {
-                if (this.checklist[i].value == filter) {
-                    this.checklist[i].isSelected = false;
-                }
-            }
-            console.log("You checked " + checked + " and here checked filters: " + this.checkedfilters);
-            if (this.checkedfilters.length == 0) {
+            var checkedfilters = this.logic.getCheckedFilters(this.checklist);
+            if (checkedfilters.length == 0) {
                 console.log("here u should get init data..");
                 this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
                 setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
             }
             else {
-                console.log("here u should get tmp data");
-                // this.dataSource = new MatTableDataSource<Server>(this.tempdata);
-                // this.dataSource.paginator = this.paginator;
                 this.parseFilterData();
             }
         }
-    };
-    ServersComponent.prototype.uncheckAll = function () {
-        for (var i = 0; i < this.checklist.length; i++) {
-            this.checklist[i].isSelected = false;
-        }
-    };
-    ServersComponent.prototype.applyFilter = function (filterValue) {
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-        console.log("HAHAH " + this.dataSource.filter);
     };
     ServersComponent.prototype.search = function (filterValue) {
         this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -1220,18 +1190,19 @@ var ServersComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./servers.component.html */ "./src/app/servers/servers.component.html"),
             styles: [__webpack_require__(/*! ./servers.component.css */ "./src/app/servers/servers.component.css")],
             animations: [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["trigger"])('slideInOut', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])(':enter', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(-100%)' }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(0%)' }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["trigger"])('slideInOut', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateX(-100%)' }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateX(0%)' }))
                     ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["transition"])(':leave', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_6__["style"])({ transform: 'translateX(0%)' }))
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["transition"])(':leave', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_7__["style"])({ transform: 'translateX(0%)' }))
                     ])
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _settings_service__WEBPACK_IMPORTED_MODULE_5__["SettingsService"]])
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__["SettingsService"],
+            _logic_service__WEBPACK_IMPORTED_MODULE_6__["LogicService"]])
     ], ServersComponent);
     return ServersComponent;
 }());
@@ -1293,10 +1264,10 @@ var ServersService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/settingdialog/settingdialog.component.css":
-/*!***********************************************************!*\
-  !*** ./src/app/settingdialog/settingdialog.component.css ***!
-  \***********************************************************/
+/***/ "./src/app/settings/settingdialog/settingdialog.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/settings/settingdialog/settingdialog.component.css ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1304,10 +1275,10 @@ module.exports = ".middle\r\n{\r\n    text-align: center; \r\n    /* background-
 
 /***/ }),
 
-/***/ "./src/app/settingdialog/settingdialog.component.html":
-/*!************************************************************!*\
-  !*** ./src/app/settingdialog/settingdialog.component.html ***!
-  \************************************************************/
+/***/ "./src/app/settings/settingdialog/settingdialog.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/settings/settingdialog/settingdialog.component.html ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1315,10 +1286,10 @@ module.exports = "<h1 mat-dialog-title class=\"middle\">Change value of {{data.s
 
 /***/ }),
 
-/***/ "./src/app/settingdialog/settingdialog.component.ts":
-/*!**********************************************************!*\
-  !*** ./src/app/settingdialog/settingdialog.component.ts ***!
-  \**********************************************************/
+/***/ "./src/app/settings/settingdialog/settingdialog.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/settings/settingdialog/settingdialog.component.ts ***!
+  \*******************************************************************/
 /*! exports provided: SettingdialogComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1352,65 +1323,13 @@ var SettingdialogComponent = /** @class */ (function () {
     SettingdialogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-settingdialog',
-            template: __webpack_require__(/*! ./settingdialog.component.html */ "./src/app/settingdialog/settingdialog.component.html"),
-            styles: [__webpack_require__(/*! ./settingdialog.component.css */ "./src/app/settingdialog/settingdialog.component.css")]
+            template: __webpack_require__(/*! ./settingdialog.component.html */ "./src/app/settings/settingdialog/settingdialog.component.html"),
+            styles: [__webpack_require__(/*! ./settingdialog.component.css */ "./src/app/settings/settingdialog/settingdialog.component.css")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
     ], SettingdialogComponent);
     return SettingdialogComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/settings.service.ts":
-/*!*************************************!*\
-  !*** ./src/app/settings.service.ts ***!
-  \*************************************/
-/*! exports provided: SettingsService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsService", function() { return SettingsService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-// import * as config from './config.json';
-var host = '';
-// const dada:any = (<any>config);
-var SettingsService = /** @class */ (function () {
-    function SettingsService(http) {
-        this.http = http;
-    }
-    SettingsService.prototype.getSettings = function () {
-        return this.http.get(host + '/api/getsettings');
-    };
-    SettingsService.prototype.postsettings = function (data) {
-        return this.http.post(host + '/api/postsettings', data);
-    };
-    SettingsService.prototype.resetSettings = function () {
-        return this.http.get(host + '/api/initsettings');
-    };
-    SettingsService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: 'root'
-        }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
-    ], SettingsService);
-    return SettingsService;
 }());
 
 
@@ -1435,7 +1354,7 @@ module.exports = ".all\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n    marg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<!-- [@slideInOut] -->\n<!-- <div class=\"all\"> -->\n  <p class=\"title\"  *ngIf=\"animation\"> Settings list: </p>\n  <div class=\"mat-elevation-z8 centered\"  *ngIf=\"animation\" >\n\n  <table mat-table [dataSource]=\"dataSource\">\n      <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Setting </th>\n          <td mat-cell *matCellDef=\"let setting\"> {{setting.name}} </td>\n      </ng-container>\n        \n      <ng-container matColumnDef=\"value\">\n        <th mat-header-cell *matHeaderCellDef> Value </th>\n        <td mat-cell *matCellDef=\"let setting; let i=index\" class=\"valuetd\" (click)=\"openDialog(setting.name,setting.value,i)\"> {{setting.value}} </td>\n      </ng-container>\n    \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index; let setting\"></tr>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[3, 5, 10]\" showFirstLastButtons></mat-paginator>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:50px;\" color=\"primary\"><mat-icon (click)=\"resetSettings()\" title=\"reset settings\" class=\"refreshbtn\">build</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n<!-- </div> -->\n\n<mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>"
+module.exports = "\n\n<!-- [@slideInOut] -->\n<!-- <div class=\"all\"> -->\n  <p class=\"title\"  *ngIf=\"animation\"> Settings list: </p>\n  <div class=\"mat-elevation-z8 centered\"  *ngIf=\"animation\" >\n\n  <table mat-table [dataSource]=\"dataSource\">\n      <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Setting </th>\n          <td mat-cell *matCellDef=\"let setting\"> {{setting.name}} </td>\n      </ng-container>\n        \n      <ng-container matColumnDef=\"value\">\n        <th mat-header-cell *matHeaderCellDef> Value </th>\n        <td mat-cell *matCellDef=\"let setting; let i=index\" class=\"valuetd\" (click)=\"openDialog(setting.name,setting.value,i)\"> {{setting.value}} </td>\n      </ng-container>\n    \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index; let setting\"></tr>\n    </table>\n    <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n    <button mat-icon-button style=\"position: absolute; bottom:10px; left:50px;\" color=\"primary\"><mat-icon (click)=\"resetSettings()\" title=\"reset settings\" class=\"refreshbtn\">build</mat-icon></button>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n<!-- </div> -->\n\n<mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>"
 
 /***/ }),
 
@@ -1451,8 +1370,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../settingdialog/settingdialog.component */ "./src/app/settingdialog/settingdialog.component.ts");
-/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../settings.service */ "./src/app/settings.service.ts");
+/* harmony import */ var _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./settingdialog/settingdialog.component */ "./src/app/settings/settingdialog/settingdialog.component.ts");
+/* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings.service */ "./src/app/settings/settings.service.ts");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1586,6 +1505,58 @@ var SettingsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"]])
     ], SettingsComponent);
     return SettingsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/settings/settings.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/settings/settings.service.ts ***!
+  \**********************************************/
+/*! exports provided: SettingsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsService", function() { return SettingsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// import * as config from './config.json';
+var host = '';
+// const dada:any = (<any>config);
+var SettingsService = /** @class */ (function () {
+    function SettingsService(http) {
+        this.http = http;
+    }
+    SettingsService.prototype.getSettings = function () {
+        return this.http.get(host + '/api/getsettings');
+    };
+    SettingsService.prototype.postsettings = function (data) {
+        return this.http.post(host + '/api/postsettings', data);
+    };
+    SettingsService.prototype.resetSettings = function () {
+        return this.http.get(host + '/api/initsettings');
+    };
+    SettingsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], SettingsService);
+    return SettingsService;
 }());
 
 

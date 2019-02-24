@@ -182,6 +182,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatProgressSpinnerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSortModule"],
                 _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_17__["OverlayModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(appRoutes)
             ],
@@ -850,7 +851,7 @@ var GroupdialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}"
+module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spacer {\r\n    flex: 1 0 auto;\r\n  }\r\n.bot\r\n{\r\n    position: relative;\r\n    margin-bottom: 0;\r\n    top: 1em;\r\n    padding: 0;\r\n    margin: 0;\r\n    bottom: 0;\r\n}\r\n.field\r\n{\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n.good\r\n{\r\n    color: primary;\r\n}\r\n.bad\r\n{\r\n    color: red;\r\n}\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}"
 
 /***/ }),
 
@@ -861,7 +862,7 @@ module.exports = ".middle\r\n{\r\n    text-align: center; \r\n}\r\n.example-spac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title class=\"middle\">Change mail recievers for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <!-- <ul>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> banana\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === '324'\">&#10003;</span> da\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> harta\n    </li>\n  </ul> -->\n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.mails\">{{data.mails}}</textarea>\n        <mat-hint align=\"start\"><strong>Include ' , ' between mails to make a list</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<br>\n<mat-checkbox [(ngModel)]=\"data.tick\" style=\"margin-left: 0;\" color=\"warn\">Include for every member of group {{data.group}}?</mat-checkbox>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\">Ok</button>\n</div>"
+module.exports = "<h1 mat-dialog-title class=\"middle\">Change mail recievers for {{data.server}}</h1>\n<div mat-dialog-content class=\"middle\">\n  \n  <!-- <ul>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> banana\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === '324'\">&#10003;</span> da\n    </li>\n    <li>\n      <span *ngIf=\"data.newmails === 'da'\">&#10003;</span> harta\n    </li>\n  </ul> -->\n  <mat-form-field class=\"field\">\n        <!-- <input matInput [(ngModel)]=\"data.mails\"> -->\n        <!-- [class.bad]=\"!good\" [class.good]=\"good\" -->\n        <textarea matInput placeholder=\"Type:\" [(ngModel)]=\"data.mails\" (input)=\"valid(data.mails)\">{{data.mails}}</textarea>\n        <mat-hint align=\"start\"><strong>Include ' , ' between mails to make a list</strong> </mat-hint>\n  </mat-form-field>\n</div>\n<br>\n<mat-checkbox [(ngModel)]=\"data.tick\" style=\"margin-left: 0;\" color=\"warn\">Include for every member of group {{data.group}}?</mat-checkbox>\n<p class=\"text-danger\" *ngIf=\"errormsg\">{{errormsg}}</p>\n<div mat-dialog-actions class=\"bot\">\n    <!-- <button mat-button (click)=\"onNoClick()\">nvm</button> -->\n    <button mat-button mat-dialog-close>back</button>\n    <span class=\"example-spacer\"></span>\n    <button mat-button [mat-dialog-close]=\"data\" [disabled]=\"!good\">Ok</button>\n</div>"
 
 /***/ }),
 
@@ -895,9 +896,31 @@ var ServerdialogComponent = /** @class */ (function () {
     function ServerdialogComponent(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
+        this.good = false;
+        this.errormsg = '';
     }
     ServerdialogComponent.prototype.onNoClick = function () {
         this.dialogRef.close();
+    };
+    ServerdialogComponent.prototype.valid = function (str) {
+        var list = str.split(",");
+        // console.log(list);
+        for (var i = 0; i < list.length; i++) {
+            if (!this.validmail(list[i])) {
+                this.good = false;
+                // console.log(this.good);
+                this.errormsg = 'Not a mail or mail list.';
+                return;
+                // return false;
+            }
+        }
+        this.good = true;
+        // console.log(this.good);
+        this.errormsg = '';
+    };
+    ServerdialogComponent.prototype.validmail = function (str) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(str);
     };
     ServerdialogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -923,7 +946,7 @@ var ServerdialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.filters {\r\n    padding: 0;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.grouptd\r\n{\r\n    width: 9%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    text-align: left;\r\n    /* word-break: break-all; */\r\n}\r\n\r\nhovering\r\n{\r\n\r\n}\r\n\r\n.hovering:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n/* .mailtd:hover\r\n{\r\n\r\n} */\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
+module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 100%;\r\n    width: 100%;\r\n    margin: 0; */\r\n}\r\n\r\ntable {\r\n    /* position: absolute; */\r\n    width: 100%;\r\n    /* left: 10%; */\r\n    /* max-height: 400px;\r\n    overflow-y: scroll; */\r\n  }\r\n\r\n.centered {\r\n    position: relative;\r\n    width: 80%;\r\n    left: 10%;\r\n  }\r\n\r\n.filters {\r\n    padding: 0;\r\n  }\r\n\r\n.title\r\n{\r\n    position: relative;\r\n    /* color: darkgreen; */\r\n    font-size: 2em;\r\n    text-align: center;\r\n}\r\n\r\n.middle\r\n{\r\n    text-align: center; \r\n}\r\n\r\n.example-spacer {\r\n    flex: 1 1 auto;\r\n  }\r\n\r\n.pagtool\r\n{\r\n    /* background-color: white; */\r\n}\r\n\r\n.mid\r\n{\r\n    position: fixed;\r\n    z-index: 999;\r\n    height: 2em;\r\n    width: 2em;\r\n    margin: auto;\r\n    top: 0;\r\n    left: 0;\r\n    bottom: 0;\r\n    right: 0;\r\n}\r\n\r\n.refreshbtn:hover\r\n{\r\n    color: lightblue;\r\n}\r\n\r\n.mailtd\r\n{\r\n    width: 60%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n}\r\n\r\n.grouptd\r\n{\r\n    width: 9%;\r\n    max-width: 20em;\r\n    white-space: normal;\r\n    text-align: left;\r\n    /* word-break: break-all; */\r\n}\r\n\r\nhovering\r\n{\r\n\r\n}\r\n\r\n.hovering:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n    color: white;\r\n}\r\n\r\n/* .mailtd:hover\r\n{\r\n\r\n} */\r\n\r\n.text-danger\r\n{\r\n    color:red;\r\n    font-weight: bold;\r\n}\r\n\r\n.text-correct\r\n{\r\n    color:green;\r\n    font-weight: bold;\r\n}\r\n\r\n/* .refresh:hover\r\n{\r\n    cursor: pointer;\r\n    background-color: #3f51b5;\r\n} */\r\n\r\n.columntitle\r\n{\r\n    font-size: 1em;\r\n}\r\n\r\ntbody\r\n{\r\n    display: block;\r\n    height: 300px;\r\n    overflow: auto;\r\n}\r\n\r\nthead, tbody tr {\r\n    display:table;\r\n    width:100%;\r\n    table-layout:fixed;/* even columns width , fix width of table too*/\r\n}"
 
 /***/ }),
 
@@ -934,7 +957,7 @@ module.exports = ".all\r\n{\r\n    /* overflow-y: hidden; */\r\n    /* height: 1
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <mat-card class=\"mat-elevation-z8 centered filters\" color=\"primary\">\n    <!-- <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n    </mat-form-field> -->\n    <!-- [(ngModel)]=\"crap\" [checked]=\"false\" -->\n    <!-- <mat-checkbox *ngFor=\"let filter of filters\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(filter,$event.checked)\" color=\"warn\">{{filter}}</mat-checkbox> -->\n    <mat-checkbox *ngFor=\"let item of checklist\" [(ngModel)]=\"item.isSelected\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(item.value,$event.checked)\" color=\"warn\">{{item.value}}</mat-checkbox>\n  </mat-card>\n  <br>\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\">\n        \n        <ng-container matColumnDef=\"group\">\n          <th mat-header-cell *matHeaderCellDef> Group </th>\n          <td mat-cell *matCellDef=\"let server\" (click)=\"openGroupDialog(server.server,server.id,server.group)\" class=\"hovering grouptd\"> {{server.group}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,server.id,server.group)\" class=\"hovering mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n      <mat-form-field style=\"position: absolute; bottom:-15px; left:80px;\">\n          <input matInput (keyup)=\"search($event.target.value)\" [disabled]=\"searchdisabled\" placeholder=\"Search\">\n      </mat-form-field>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
+module.exports = "<!-- [@slideInOut] -->\n<div class=\"all\">\n  <p class=\"title\" *ngIf=\"animation\"> Servers list: </p>\n\n  <mat-card class=\"mat-elevation-z8 centered filters\" color=\"primary\">\n    <!-- <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Search\">\n    </mat-form-field> -->\n    <!-- [(ngModel)]=\"crap\" [checked]=\"false\" -->\n    <!-- <mat-checkbox *ngFor=\"let filter of filters\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(filter,$event.checked)\" color=\"warn\">{{filter}}</mat-checkbox> -->\n    <mat-checkbox *ngFor=\"let item of checklist\" [(ngModel)]=\"item.isSelected\" style=\"margin-right: 10px;\" (change)=\"checkBoxClick(item.value,$event.checked)\" color=\"warn\">{{item.value}}</mat-checkbox>\n  </mat-card>\n  <br>\n  <div class=\"mat-elevation-z8 centered\" *ngIf=\"animation\">\n    <table mat-table [dataSource]=\"dataSource\" matSort>\n        \n        <ng-container matColumnDef=\"group\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Group </th>\n          <td mat-cell *matCellDef=\"let server\" (click)=\"openGroupDialog(server.server,server.id,server.group)\" class=\"hovering grouptd\"> {{server.group}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"server\">\n            <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Server </th>\n            <td mat-cell *matCellDef=\"let server\"> {{server.server}} </td>\n        </ng-container>\n          \n        <ng-container matColumnDef=\"cpu\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Cpu </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.cpu > peak\"> {{server.cpu}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"ram\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Ram </th>\n          <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.ram > peak\" > {{server.ram}}% </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"overloaded\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Overloaded? </th>\n            <td mat-cell *matCellDef=\"let server\" [class.text-danger]=\"server.overloaded\" \n            [class.text-correct]=\"!server.overloaded\">\n            <mat-icon *ngIf=\"!server.overloaded\">check</mat-icon>\n            <mat-icon *ngIf=\"server.overloaded\">priority_high</mat-icon>\n            {{server.overloaded}} </td>\n        </ng-container>\n        <!-- [ngStyle]=\"{'color:':server.overloaded === 'true' ? 'red' : 'green' }\" -->\n        <ng-container matColumnDef=\"mail\">\n          <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"columntitle\"> Mail receivers </th>\n          <td mat-cell *matCellDef=\"let server; let i=index\" (click)=\"openDialog(server.server,server.mail,server.id,server.group)\" class=\"hovering mailtd\"> {{server.mail}} </td>\n        </ng-container>\n\n        <thead>\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        </thead>\n        <tbody>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns; let i = index\"></tr>\n        </tbody>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>\n      <!-- <mat-toolbar class=\"pagtool\" color=\"accent\"> -->\n        <!-- <mat-toolbar-row> -->\n        <!--   <mat-icon (click)=\"updateTable()\" title=\"refresh\">refresh</mat-icon>\n            <span class=\"example-spacer\"></span>\n          <mat-paginator [pageSizeOptions]=\"[10, 5, 3]\" showFirstLastButtons></mat-paginator>-->\n        <!-- </mat-toolbar-row> -->\n      <!-- </mat-toolbar> -->\n      <button mat-icon-button style=\"position: absolute; bottom:10px; left:10px;\" color=\"primary\"><mat-icon (click)=\"updateTable()\" title=\"refresh\" class=\"refreshbtn\">refresh</mat-icon></button>\n      <mat-form-field style=\"position: absolute; bottom:-15px; left:80px;\">\n          <input matInput (keyup)=\"search($event.target.value)\" [disabled]=\"searchdisabled\" placeholder=\"Search\">\n      </mat-form-field>\n  </div>\n  <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n  <mat-spinner class=\"mid\" color=\"warn\" *ngIf=\"loading\"></mat-spinner>\n    <!-- <p *ngIf=\"newmails\">\n        You chose: <i>{{newmails}}</i>\n    </p> -->\n</div>"
 
 /***/ }),
 
@@ -1014,7 +1037,7 @@ var ServersComponent = /** @class */ (function () {
         console.log("Hello there ");
         //comment this pls before build, client side testing
         // this.dataSource  = new MatTableDataSource<Server>(SERVER_DATA);
-        // setTimeout(() => this.dataSource.paginator = this.paginator);
+        // setTimeout(() => {this.dataSource.paginator = this.paginator; this.dataSource.sort = this.sort;});
         // this.grouplist = ['proservers','damoy','hamami','useless','amazing'];
         // this.makeFilters();
         // ------------------------------
@@ -1034,7 +1057,8 @@ var ServersComponent = /** @class */ (function () {
             _this.getGroupsList();
             _this.makeFilters();
             _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
-            _this.dataSource.paginator = _this.paginator;
+            // this.dataSource.paginator = this.paginator;
+            setTimeout(function () { _this.dataSource.paginator = _this.paginator; _this.dataSource.sort = _this.sort; });
             _this.errormsg = "";
             console.log("got new server data");
             setTimeout(function () { this.loading = false; }.bind(_this), 500);
@@ -1148,7 +1172,7 @@ var ServersComponent = /** @class */ (function () {
                 _this.updateGroups({ server: SERVER_DATA[result.index].server, group: SERVER_DATA[result.index].group });
                 _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
                 _this.dataSource.paginator = _this.paginator;
-                setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+                setTimeout(function () { _this.dataSource.paginator = _this.paginator; _this.dataSource.sort = _this.sort; });
             }
         });
     };
@@ -1160,7 +1184,7 @@ var ServersComponent = /** @class */ (function () {
         // console.log(newdata);
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](newdata);
         this.dataSource.paginator = this.paginator;
-        setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+        setTimeout(function () { _this.dataSource.paginator = _this.paginator; _this.dataSource.sort = _this.sort; });
     };
     ServersComponent.prototype.checkBoxClick = function (filter, checked) {
         var _this = this;
@@ -1178,7 +1202,7 @@ var ServersComponent = /** @class */ (function () {
             if (checkedfilters.length == 0) {
                 console.log("here u should get init data..");
                 this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](SERVER_DATA);
-                setTimeout(function () { return _this.dataSource.paginator = _this.paginator; });
+                setTimeout(function () { _this.dataSource.paginator = _this.paginator; _this.dataSource.sort = _this.sort; });
             }
             else {
                 this.parseFilterData();
@@ -1193,6 +1217,10 @@ var ServersComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"]),
         __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatPaginator"])
     ], ServersComponent.prototype, "paginator", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"]),
+        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"])
+    ], ServersComponent.prototype, "sort", void 0);
     ServersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-servers',

@@ -96,27 +96,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings/settings.service */ "./src/app/settings/settings.service.ts");
 /* harmony import */ var _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./servers/servers.service */ "./src/app/servers/servers.service.ts");
 /* harmony import */ var _logic_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./logic.service */ "./src/app/logic.service.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
-/* harmony import */ var _servers_servers_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./servers/servers.component */ "./src/app/servers/servers.component.ts");
-/* harmony import */ var _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./servers/serverdialog/serverdialog.component */ "./src/app/servers/serverdialog/serverdialog.component.ts");
-/* harmony import */ var _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./settings/settingdialog/settingdialog.component */ "./src/app/settings/settingdialog/settingdialog.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
-/* harmony import */ var _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./testingarea/testingarea.component */ "./src/app/testingarea/testingarea.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./servers/groupdialog/groupdialog.component */ "./src/app/servers/groupdialog/groupdialog.component.ts");
+/* harmony import */ var _main_shared_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main/shared.service */ "./src/app/main/shared.service.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _servers_servers_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./servers/servers.component */ "./src/app/servers/servers.component.ts");
+/* harmony import */ var _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./servers/serverdialog/serverdialog.component */ "./src/app/servers/serverdialog/serverdialog.component.ts");
+/* harmony import */ var _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./settings/settingdialog/settingdialog.component */ "./src/app/settings/settingdialog/settingdialog.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
+/* harmony import */ var _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./testingarea/testingarea.component */ "./src/app/testingarea/testingarea.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./servers/groupdialog/groupdialog.component */ "./src/app/servers/groupdialog/groupdialog.component.ts");
+/* harmony import */ var _main_test_test_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/test/test.component */ "./src/app/main/test/test.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -139,9 +142,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var appRoutes = [
-    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"] },
-    { path: 'main', component: _main_main_component__WEBPACK_IMPORTED_MODULE_16__["MainComponent"] },
+    { path: '', component: _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"] },
+    { path: 'main', component: _main_main_component__WEBPACK_IMPORTED_MODULE_17__["MainComponent"] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -149,50 +153,51 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
-                _settings_settings_component__WEBPACK_IMPORTED_MODULE_11__["SettingsComponent"],
-                _servers_servers_component__WEBPACK_IMPORTED_MODULE_12__["ServersComponent"],
-                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__["ServerdialogComponent"],
-                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__["SettingdialogComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_15__["LoginComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_16__["MainComponent"],
-                _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_18__["TestingareaComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"],
-                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__["GroupdialogComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
+                _settings_settings_component__WEBPACK_IMPORTED_MODULE_12__["SettingsComponent"],
+                _servers_servers_component__WEBPACK_IMPORTED_MODULE_13__["ServersComponent"],
+                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_14__["ServerdialogComponent"],
+                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_15__["SettingdialogComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_17__["MainComponent"],
+                _testingarea_testingarea_component__WEBPACK_IMPORTED_MODULE_19__["TestingareaComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_20__["HomeComponent"],
+                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_21__["GroupdialogComponent"],
+                _main_test_test_component__WEBPACK_IMPORTED_MODULE_22__["TestComponent"]
             ],
             imports: [
-                _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatOptionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSortModule"],
-                _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_17__["OverlayModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(appRoutes)
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatOptionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatProgressSpinnerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSortModule"],
+                _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_18__["OverlayModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(appRoutes)
             ],
             entryComponents: [
-                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_13__["ServerdialogComponent"],
-                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_14__["SettingdialogComponent"],
-                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_20__["GroupdialogComponent"]
+                _servers_serverdialog_serverdialog_component__WEBPACK_IMPORTED_MODULE_14__["ServerdialogComponent"],
+                _settings_settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_15__["SettingdialogComponent"],
+                _servers_groupdialog_groupdialog_component__WEBPACK_IMPORTED_MODULE_21__["GroupdialogComponent"]
             ],
-            providers: [_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _logic_service__WEBPACK_IMPORTED_MODULE_5__["LogicService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
+            providers: [_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _servers_servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _logic_service__WEBPACK_IMPORTED_MODULE_5__["LogicService"], _main_shared_service__WEBPACK_IMPORTED_MODULE_6__["SharedService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -220,7 +225,7 @@ module.exports = ".all\r\n{\r\n    /* position: absolute; */\r\n    overflow-y: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"all\">\n\n    <p class=\"title\"> Welcome </p>\n\n    <p class=\"subtitle\">Alerting service will show you all the needed servers and their metrics.</p>\n    <p class=\"subtitle\">configure who will recieve mails on critical metrics and configure many other variables of the service.</p>\n    <p class=\"subtitle\">This is early buggy alpha, its probably usable but expect alot of bugs.</p>\n    <!-- <mat-divider></mat-divider> -->\n    <br>\n    <p class=\"subtitle\"> The service is running for {{hours}} hours and {{minutes}} minutes.</p>\n    <p class=\"subtitle\"> {{mails}} mails were sent.</p>\n    <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n\n</div>\n"
+module.exports = "<div class=\"all\">\n\n    <p class=\"title\"> Welcome </p>\n\n    <p class=\"subtitle\">Alerting service will show you all the needed servers and their metrics.</p>\n    <p class=\"subtitle\">configure who will recieve mails on critical metrics and configure many other variables of the service.</p>\n    <p class=\"subtitle\">This is early buggy alpha, its probably usable but expect alot of bugs.</p>\n    <!-- <mat-divider></mat-divider> -->\n    <br>\n    <p class=\"subtitle\"> The service is running for {{hours}} hours and {{minutes}} minutes.</p>\n    <p class=\"subtitle\"> {{mails}} mails were sent.</p>\n    <p class=\"text-danger middle\" *ngIf=\"errormsg\">{{errormsg}}</p>\n    <p>{{message}}</p>\n\n</div>\n"
 
 /***/ }),
 
@@ -236,6 +241,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _home_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.service */ "./src/app/home/home.service.ts");
+/* harmony import */ var _main_shared_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../main/shared.service */ "./src/app/main/shared.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -247,15 +253,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+// import { Injectable } from '@angular/core';
+// import { Observable } from 'rxjs/Observable';
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(homeapi) {
+    function HomeComponent(homeapi, shared) {
         this.homeapi = homeapi;
+        this.shared = shared;
         this.mails = 0;
         this.hours = 0;
         this.minutes = 0;
         this.errormsg = "";
     }
+    HomeComponent.prototype.onView = function () {
+        console.log("viewing Home tab");
+        this.updateData();
+    };
+    HomeComponent.prototype.receiveMessage = function ($event) {
+        // this.message = $event
+        console.log($event);
+    };
+    HomeComponent.prototype.wakeup = function () {
+        console.log("I am home!");
+        this.updateData();
+    };
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.shared.homeMessage.subscribe(function (index) { return _this.wakeup(); });
+        this.updateData();
+    };
+    // newMessage() {
+    //   this.shared.changeMessage("Hello from Sibling")
+    // }
+    HomeComponent.prototype.updateData = function () {
         var _this = this;
         this.homeapi.getCount().subscribe(function (data) {
             console.log(data);
@@ -283,7 +313,8 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [_home_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"]])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_home_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"], _main_shared_service__WEBPACK_IMPORTED_MODULE_2__["SharedService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -457,7 +488,7 @@ module.exports = "/* .cssmagic\r\n{\r\n     position: absolute;\r\n} */\r\n/* .e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"loginbox\">\n    <!-- <div class=\"aboveform\">\n      <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n      <p class=\"title\">Hello</p> -->\n      <div class=\"aboveform\">\n          <p class=\"title\">Hello</p>\n          <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n      </div>\n    \n    <form class=\"myform\" #f=\"ngForm\">\n        <table class=\"field\" cellspacing=\"0\">\n          <tr>\n            <td>\n              <mat-form-field class=\"field\">\n              <input matInput placeholder=\"Username\" id=\"user\" class=\"field\" [(ngModel)]=\"username\" name=\"username\" (input)=\"inputChanged($event)\" required>\n              </mat-form-field>\n            </td>\n          </tr>\n          <tr>\n          <td><mat-form-field class=\"field\">\n            <input matInput placeholder=\"Password\" id=\"pass\" class=\"field\" [(ngModel)]=\"password\" type=\"password\" name=\"password\" (input)=\"inputChanged($event)\" required>\n          </mat-form-field></td>\n        </tr></table>\n        <button mat-raised-button (click)=\"login()\" color=\"primary\" class=\"btn\" [disabled]=\"!f.valid\">Login</button>\n        <p class=\"err\" *ngIf=\"err\">{{err}}</p>\n        <!-- [@slideInOut]=\"err\" -->\n      </form>\n  </div>"
+module.exports = "\n<div class=\"loginbox\">\n    <!-- <div class=\"aboveform\">\n      <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n      <p class=\"title\">Hello</p> -->\n      <div class=\"aboveform\">\n          <p class=\"title\">Hello</p>\n          <!-- <img src=\"../../assets/images/alertpng.png\" class=\"avatar\"> -->\n      </div>\n    \n    <form class=\"myform\" #f=\"ngForm\">\n        <table class=\"field\" cellspacing=\"0\">\n          <tr>\n            <td>\n              <mat-form-field class=\"field\">\n              <input matInput placeholder=\"Username\" id=\"user\" class=\"field\" [(ngModel)]=\"username\" name=\"username\" (input)=\"inputChanged($event)\" required>\n              </mat-form-field>\n            </td>\n          </tr>\n          <tr>\n          <td><mat-form-field class=\"field\">\n            <input matInput placeholder=\"Password\" id=\"pass\" class=\"field\" [(ngModel)]=\"password\" type=\"password\" name=\"password\" (input)=\"inputChanged($event)\" required>\n          </mat-form-field></td>\n        </tr></table>\n        <button mat-raised-button (click)=\"login()\" color=\"primary\" class=\"btn\" [disabled]=\"!f.valid\">Login</button>\n        <p class=\"err\" *ngIf=\"err\">{{err}}</p>\n        <!-- [@slideInOut]=\"err\" -->\n      </form>\n  </div>"
 
 /***/ }),
 
@@ -624,7 +655,7 @@ module.exports = ":host{\r\n    box-sizing: border-box;\r\n    display: block;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- class all on this div -->\n<div id=\"wrapper\">\n  <mat-menu #appMenu=\"matMenu\">\n      <button mat-menu-item (click)=\"toggleTheme()\"> Switch theme </button>\n      <button mat-menu-item (click)=\"help()\"> Help </button>\n      <!-- <button mat-menu-item (click)=\"changeStatus()\"> Change status </button> -->\n      <button mat-menu-item (click)=\"logout()\"> Logout </button>\n    </mat-menu>\n    \n    \n   <mat-sidenav-container class=\"example-container\" >\n      <mat-toolbar color=\"primary\">\n        <!-- <button mat-button (click)=\"sidenav.open()\" ><mat-icon>menu</mat-icon></button> -->\n        <!-- <img src=\"../../assets/images/alertpng.png\" class=\"logo\"> -->\n        <img [src]=pic class=\"logo\">\n        <span>Alerting Service</span>  \n        <span class=\"example-spacer\"></span>\n        <p> buggy alpha</p>\n        <button mat-button [matMenuTriggerFor]=\"appMenu\"><mat-icon>settings</mat-icon></button>\n      </mat-toolbar>\n\n      <mat-tab-group id=\"tab-group\">\n          <mat-tab label=\"Home\" class=\"tab\">\n            <app-home></app-home>\n          </mat-tab>\n          <mat-tab label=\"Settings\" [disabled]=\"disabled\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Servers\">\n            <app-servers></app-servers>\n          </mat-tab>\n          <!-- <mat-tab label=\"Testing area\">\n            <app-testingarea></app-testingarea>\n          </mat-tab> -->\n      </mat-tab-group>\n\n      <mat-sidenav #sidenav class=\"example-sidenav\">\n        <mat-list class=\"list-nav\">\n            <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n            <mat-divider style=\"padding-top: 10%\"></mat-divider>\n            <mat-list-item class=\"list-item\" *ngFor=\"let source of options\" (click)=\"navPress(source[0]);sidenav.close();\">\n              <mat-icon>{{source[1]}}</mat-icon>\n              <span class=\"source-name\"> {{source[0]}}</span>\n            </mat-list-item>\n        </mat-list>\n      </mat-sidenav>\n        <!-- <p class=\"title\" color=\"primary\"> service is {{ statustr }} </p> -->\n        <!-- <app-settings *ngIf=\"content==0\"></app-settings>\n        <app-servers *ngIf=\"content==1\"></app-servers>\n        <app-testingarea *ngIf=\"content==2\"></app-testingarea> -->\n    </mat-sidenav-container>\n</div>"
+module.exports = "<!-- class all on this div -->\n<div id=\"wrapper\">\n  <mat-menu #appMenu=\"matMenu\">\n      <button mat-menu-item (click)=\"toggleTheme()\"> Switch theme </button>\n      <button mat-menu-item (click)=\"help()\"> Help </button>\n      <!-- <button mat-menu-item (click)=\"changeStatus()\"> Change status </button> -->\n      <button mat-menu-item (click)=\"logout()\"> Logout </button>\n    </mat-menu>\n    \n    \n   <mat-sidenav-container class=\"example-container\" >\n      <mat-toolbar color=\"primary\">\n        <!-- <button mat-button (click)=\"sidenav.open()\" ><mat-icon>menu</mat-icon></button> -->\n        <!-- <img src=\"../../assets/images/alertpng.png\" class=\"logo\"> -->\n        <img [src]=pic class=\"logo\">\n        <span>Alerting Service</span>  \n        <span class=\"example-spacer\"></span>\n        <p> buggy alpha</p>\n        <button mat-button [matMenuTriggerFor]=\"appMenu\"><mat-icon>settings</mat-icon></button>\n      </mat-toolbar>\n\n      <mat-tab-group id=\"tab-group\" (selectedTabChange)=\"tabChanged($event)\">\n          <mat-tab label=\"Home\" class=\"tab\">\n            <app-home></app-home>\n          </mat-tab>\n          <mat-tab label=\"Settings\" [disabled]=\"disabled\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Servers\">\n            <app-servers></app-servers>\n          </mat-tab>\n          <!-- <mat-tab label=\"Testing area\">\n            <app-testingarea></app-testingarea>\n          </mat-tab> -->\n      </mat-tab-group>\n\n      <mat-sidenav #sidenav class=\"example-sidenav\">\n        <mat-list class=\"list-nav\">\n            <img src=\"../../assets/images/alertpng.png\" class=\"avatar\">\n            <mat-divider style=\"padding-top: 10%\"></mat-divider>\n            <mat-list-item class=\"list-item\" *ngFor=\"let source of options\" (click)=\"navPress(source[0]);sidenav.close();\">\n              <mat-icon>{{source[1]}}</mat-icon>\n              <span class=\"source-name\"> {{source[0]}}</span>\n            </mat-list-item>\n        </mat-list>\n      </mat-sidenav>\n        <!-- <p class=\"title\" color=\"primary\"> service is {{ statustr }} </p> -->\n        <!-- <app-settings *ngIf=\"content==0\"></app-settings>\n        <app-servers *ngIf=\"content==1\"></app-servers>\n        <app-testingarea *ngIf=\"content==2\"></app-testingarea> -->\n    </mat-sidenav-container>\n</div>"
 
 /***/ }),
 
@@ -642,6 +673,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/overlay */ "./node_modules/@angular/cdk/esm5/overlay.es5.js");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _servers_servers_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../servers/servers.component */ "./src/app/servers/servers.component.ts");
+/* harmony import */ var _settings_settings_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../settings/settings.component */ "./src/app/settings/settings.component.ts");
+/* harmony import */ var _shared_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shared.service */ "./src/app/main/shared.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -655,13 +690,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 var dark = 'dark-theme';
 var light = 'default-theme';
 var MainComponent = /** @class */ (function () {
-    function MainComponent(http, router, overlayContainer) {
+    // @Output() myEvent = new EventEmitter();
+    // function2(){
+    //   this.myEvent.emit(null)
+    // }
+    function MainComponent(http, router, overlayContainer, home, servers, settings, shared) {
         this.http = http;
         this.router = router;
         this.overlayContainer = overlayContainer;
+        this.home = home;
+        this.servers = servers;
+        this.settings = settings;
+        this.shared = shared;
         this.host = '';
         this.title = 'alertingjsng';
         this.statuscolor = 'darkgreen';
@@ -674,7 +721,12 @@ var MainComponent = /** @class */ (function () {
         this.disabled = true;
         console.log('app component constructor called');
     }
+    // @ViewChild(HomeComponent) HomeComponent: HomeComponent;
+    // @ViewChild(SettingsComponent) SettingsComponent: SettingsComponent;
+    // @ViewChild(ServersComponent) ServersComponent: ServersComponent;
+    // @Output() messageEvent = new EventEmitter<string>();
     MainComponent.prototype.ngOnInit = function () {
+        // this.shared.currentMessage.subscribe(message =>  message)
         this.init();
     };
     MainComponent.prototype.init = function () {
@@ -744,19 +796,155 @@ var MainComponent = /** @class */ (function () {
             this.pic = "../../assets/images/alertpng.png";
         }
     };
+    MainComponent.prototype.tabChanged = function ($event) {
+        console.log($event);
+        if ($event.index == 0) {
+            this.shared.wakeupHome();
+        }
+        // else if($event.index == 1)
+        // {
+        //   this.shared.wakeupSettings();
+        // }
+        // else if($event.index == 2)
+        // {
+        //   this.shared.wakeupServers();
+        // }
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('class'),
         __metadata("design:type", Object)
     ], MainComponent.prototype, "componentCssClass", void 0);
     MainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            providers: [_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"], _servers_servers_component__WEBPACK_IMPORTED_MODULE_5__["ServersComponent"], _settings_settings_component__WEBPACK_IMPORTED_MODULE_6__["SettingsComponent"]],
             selector: 'app-main',
             template: __webpack_require__(/*! ./main.component.html */ "./src/app/main/main.component.html"),
             styles: [__webpack_require__(/*! ./main.component.css */ "./src/app/main/main.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__["OverlayContainer"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__["OverlayContainer"], _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"],
+            _servers_servers_component__WEBPACK_IMPORTED_MODULE_5__["ServersComponent"], _settings_settings_component__WEBPACK_IMPORTED_MODULE_6__["SettingsComponent"], _shared_service__WEBPACK_IMPORTED_MODULE_7__["SharedService"]])
     ], MainComponent);
     return MainComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/shared.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/main/shared.service.ts ***!
+  \****************************************/
+/*! exports provided: SharedService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedService", function() { return SharedService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SharedService = /** @class */ (function () {
+    function SharedService() {
+        // @Output() fire:EventEmitter<any>=new EventEmitter();
+        // @Output dataChangeObserver: EventEmitter<any>=new EventEmitter();
+        this.home = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](0);
+        this.homeMessage = this.home.asObservable();
+        this.settings = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](0);
+        this.settingsMessage = this.settings.asObservable();
+        this.servers = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](0);
+        this.serversMessage = this.servers.asObservable();
+    }
+    SharedService.prototype.wakeupHome = function () {
+        this.home.next(1);
+    };
+    SharedService.prototype.wakeupSettings = function () {
+        this.settings.next(1);
+    };
+    SharedService.prototype.wakeupServers = function () {
+        this.servers.next(0);
+    };
+    SharedService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [])
+    ], SharedService);
+    return SharedService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/test/test.component.css":
+/*!**********************************************!*\
+  !*** ./src/app/main/test/test.component.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/main/test/test.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/main/test/test.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  test works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/test/test.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/main/test/test.component.ts ***!
+  \*********************************************/
+/*! exports provided: TestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestComponent", function() { return TestComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var TestComponent = /** @class */ (function () {
+    function TestComponent() {
+    }
+    TestComponent.prototype.ngOnInit = function () {
+    };
+    TestComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-test',
+            template: __webpack_require__(/*! ./test.component.html */ "./src/app/main/test/test.component.html"),
+            styles: [__webpack_require__(/*! ./test.component.css */ "./src/app/main/test/test.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], TestComponent);
+    return TestComponent;
 }());
 
 
@@ -979,6 +1167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../settings/settings.service */ "./src/app/settings/settings.service.ts");
 /* harmony import */ var _logic_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../logic.service */ "./src/app/logic.service.ts");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _main_shared_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../main/shared.service */ "./src/app/main/shared.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -988,6 +1177,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1015,11 +1205,12 @@ var SERVER_DATA = [
     { id: 14, group: "group1", server: 'harta322', cpu: 62, ram: 42, overloaded: false, mail: "banan@outlook.com,jaja@bueno.nz" }
 ];
 var ServersComponent = /** @class */ (function () {
-    function ServersComponent(dialog, serversapi, settingsapi, logic) {
+    function ServersComponent(dialog, serversapi, settingsapi, logic, shared) {
         this.dialog = dialog;
         this.serversapi = serversapi;
         this.settingsapi = settingsapi;
         this.logic = logic;
+        this.shared = shared;
         this.displayedColumns = ['group', 'server', 'cpu', 'ram', 'overloaded', 'mail'];
         this.checklist = [];
         this.grouplist = [];
@@ -1032,7 +1223,17 @@ var ServersComponent = /** @class */ (function () {
         this.errormsg = "";
         this.animation = false;
     }
+    ServersComponent.prototype.onView = function () {
+        console.log("viewing Servers tab");
+        this.updateTable();
+    };
+    ServersComponent.prototype.wakeup = function () {
+        console.log("I am servers!");
+        this.updateTable();
+    };
     ServersComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.shared.serversMessage.subscribe(function (index) { return _this.wakeup(); });
         this.animation = true;
         console.log("Hello there ");
         //comment this pls before build, client side testing
@@ -1238,8 +1439,9 @@ var ServersComponent = /** @class */ (function () {
                 ])
             ]
         }),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _servers_service__WEBPACK_IMPORTED_MODULE_4__["ServersService"], _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__["SettingsService"],
-            _logic_service__WEBPACK_IMPORTED_MODULE_6__["LogicService"]])
+            _logic_service__WEBPACK_IMPORTED_MODULE_6__["LogicService"], _main_shared_service__WEBPACK_IMPORTED_MODULE_8__["SharedService"]])
     ], ServersComponent);
     return ServersComponent;
 }());
@@ -1409,7 +1611,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _settingdialog_settingdialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./settingdialog/settingdialog.component */ "./src/app/settings/settingdialog/settingdialog.component.ts");
 /* harmony import */ var _settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./settings.service */ "./src/app/settings/settings.service.ts");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+/* harmony import */ var _main_shared_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../main/shared.service */ "./src/app/main/shared.service.ts");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1424,6 +1627,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SETTING_DATA = [
     { id: 0, name: 'ip', value: "34.324324.324324.324:3245" },
     { id: 1, name: 'peak', value: "90%" },
@@ -1431,16 +1635,27 @@ var SETTING_DATA = [
     { id: 3, name: 'json', value: "[\n    {\n      \"plates\": [\n        980202164,\n        \"anything\",\n        \"from\",\n        \"nodded\",\n        \"them\",\n        930041708.5745473\n      ],\n      \"cold\": -1490343731.0349832,\n      \"generally\": 759206740.9525161,\n      \"cent\": -1910939618,\n      \"any\": -1889045821.1710515,\n      \"acres\": true\n    },\n    true,\n    \"audience\",\n    true,\n    \"element\",\n    false\n  ]" }
 ];
 var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent(dialog, settingsapi) {
+    function SettingsComponent(dialog, settingsapi, shared) {
         this.dialog = dialog;
         this.settingsapi = settingsapi;
+        this.shared = shared;
         this.displayedColumns = ['name', 'value'];
         this.loading = false;
         this.first = true;
         this.animation = false;
         this.errormsg = "";
     }
+    SettingsComponent.prototype.onView = function () {
+        console.log("viewing Settings tab");
+        this.updateTable();
+    };
+    SettingsComponent.prototype.wakeup = function () {
+        console.log("I am settings!");
+        this.updateTable();
+    };
     SettingsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.shared.settingsMessage.subscribe(function (index) { return _this.wakeup(); });
         console.log("settings component init");
         this.animation = true;
         // this.dataSource = new MatTableDataSource<Setting>(SETTING_DATA);
@@ -1528,18 +1743,19 @@ var SettingsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./settings.component.html */ "./src/app/settings/settings.component.html"),
             styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/settings/settings.component.css")],
             animations: [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["trigger"])('slideInOut', [
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["transition"])(':enter', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["style"])({ transform: 'translateX(-100%)' }),
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["style"])({ transform: 'translateX(0%)' }))
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["trigger"])('slideInOut', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(-100%)' }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(0%)' }))
                     ]),
-                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["transition"])(':leave', [
-                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["style"])({ transform: 'translateX(0%)' }))
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["transition"])(':leave', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["animate"])('500ms ease-in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_5__["style"])({ transform: 'translateX(0%)' }))
                     ])
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"]])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"], _settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"], _main_shared_service__WEBPACK_IMPORTED_MODULE_4__["SharedService"]])
     ], SettingsComponent);
     return SettingsComponent;
 }());
